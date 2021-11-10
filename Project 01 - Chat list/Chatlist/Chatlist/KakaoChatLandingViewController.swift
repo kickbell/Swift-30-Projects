@@ -19,6 +19,7 @@ class KakaoChatLandingViewController: UIViewController {
 
     func setupTableView() {
         tableView.dataSource = self
+        tableView.delegate = self
     }
 
     private let list = Message.dummyList
@@ -35,6 +36,12 @@ extension KakaoChatLandingViewController: UITableViewDataSource {
         }
         cell.configure(message: list[indexPath.row])
         return cell
+    }
+}
+
+extension KakaoChatLandingViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
 }
 
