@@ -16,10 +16,8 @@ struct Message {
     let senderImageName: String
     let lastSentDate: String
     
-    
     var senderImage: UIImage? {
-        // TODO: Image를 주어진 senderImageName가지고 생성해주세요.
-        return nil
+        return UIImage(named: self.senderImageName) 
     }
     
     static var dummyList: [Message] {
