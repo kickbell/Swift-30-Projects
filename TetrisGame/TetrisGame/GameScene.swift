@@ -11,7 +11,9 @@ import GameplayKit
 class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
-      
+     
+      let bg = BackGround()
+      print(Variables.backarrays)
     }
     
 }

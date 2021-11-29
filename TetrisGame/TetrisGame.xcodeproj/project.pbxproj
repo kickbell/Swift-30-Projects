@@ -13,6 +13,8 @@
 		A88B1B1E27551EB30046EF47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A88B1B1C27551EB30046EF47 /* Main.storyboard */; };
 		A88B1B2027551EB60046EF47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A88B1B1F27551EB60046EF47 /* Assets.xcassets */; };
 		A88B1B2327551EB60046EF47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A88B1B2127551EB60046EF47 /* LaunchScreen.storyboard */; };
+		A88B1B2A275520000046EF47 /* BackGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88B1B29275520000046EF47 /* BackGround.swift */; };
+		A88B1B2D275521140046EF47 /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88B1B2C275521140046EF47 /* Variables.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		A88B1B1D27551EB30046EF47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A88B1B1F27551EB60046EF47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A88B1B2227551EB60046EF47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A88B1B29275520000046EF47 /* BackGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackGround.swift; sourceTree = "<group>"; };
+		A88B1B2C275521140046EF47 /* Variables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variables.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,8 @@
 		A88B1B1127551EB30046EF47 /* TetrisGame */ = {
 			isa = PBXGroup;
 			children = (
+				A88B1B2E2755211A0046EF47 /* Variables */,
+				A88B1B2B275520070046EF47 /* BackGround */,
 				A88B1B1227551EB30046EF47 /* AppDelegate.swift */,
 				A88B1B1827551EB30046EF47 /* GameScene.swift */,
 				A88B1B1A27551EB30046EF47 /* GameViewController.swift */,
@@ -63,6 +69,22 @@
 				A88B1B2127551EB60046EF47 /* LaunchScreen.storyboard */,
 			);
 			path = TetrisGame;
+			sourceTree = "<group>";
+		};
+		A88B1B2B275520070046EF47 /* BackGround */ = {
+			isa = PBXGroup;
+			children = (
+				A88B1B29275520000046EF47 /* BackGround.swift */,
+			);
+			path = BackGround;
+			sourceTree = "<group>";
+		};
+		A88B1B2E2755211A0046EF47 /* Variables */ = {
+			isa = PBXGroup;
+			children = (
+				A88B1B2C275521140046EF47 /* Variables.swift */,
+			);
+			path = Variables;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +161,8 @@
 				A88B1B1927551EB30046EF47 /* GameScene.swift in Sources */,
 				A88B1B1B27551EB30046EF47 /* GameViewController.swift in Sources */,
 				A88B1B1327551EB30046EF47 /* AppDelegate.swift in Sources */,
+				A88B1B2A275520000046EF47 /* BackGround.swift in Sources */,
+				A88B1B2D275521140046EF47 /* Variables.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
