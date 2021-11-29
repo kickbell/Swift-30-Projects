@@ -24,7 +24,7 @@ class Brick {
   struct Brick {
     var color = UIColor()
     var points = Array<CGPoint>()
-    let brickSize = 35
+    let brickSize = 35 //브릭 네모 한변의 길이
     let zPosition = CGFloat(1)
     var brickName = String()
   }
