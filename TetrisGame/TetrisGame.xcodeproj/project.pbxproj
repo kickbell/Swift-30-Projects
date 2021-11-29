@@ -15,6 +15,7 @@
 		A88B1B2327551EB60046EF47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A88B1B2127551EB60046EF47 /* LaunchScreen.storyboard */; };
 		A88B1B2A275520000046EF47 /* BackGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88B1B29275520000046EF47 /* BackGround.swift */; };
 		A88B1B2D275521140046EF47 /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88B1B2C275521140046EF47 /* Variables.swift */; };
+		A88B1B302755218B0046EF47 /* Brick.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88B1B2F2755218B0046EF47 /* Brick.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		A88B1B2227551EB60046EF47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A88B1B29275520000046EF47 /* BackGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackGround.swift; sourceTree = "<group>"; };
 		A88B1B2C275521140046EF47 /* Variables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variables.swift; sourceTree = "<group>"; };
+		A88B1B2F2755218B0046EF47 /* Brick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brick.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				A88B1B29275520000046EF47 /* BackGround.swift */,
+				A88B1B2F2755218B0046EF47 /* Brick.swift */,
 			);
 			path = BackGround;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 				A88B1B1327551EB30046EF47 /* AppDelegate.swift in Sources */,
 				A88B1B2A275520000046EF47 /* BackGround.swift in Sources */,
 				A88B1B2D275521140046EF47 /* Variables.swift in Sources */,
+				A88B1B302755218B0046EF47 /* Brick.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

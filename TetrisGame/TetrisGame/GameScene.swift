@@ -13,7 +13,14 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
      
       let bg = BackGround()
-      print(Variables.backarrays)
+      checkBrick()
     }
+  
+  func checkBrick(){
+    let arrays = Variables.backarrays
+    for item in arrays {
+      print(item)
+    }
+  }
     
 }
