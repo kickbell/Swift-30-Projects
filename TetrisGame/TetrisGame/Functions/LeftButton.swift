@@ -22,16 +22,22 @@ class LeftButton {
   func brickMoveLeft() {
     if isMovale() {
       Variables.dx -= 1
-      
+      var action = SKAction()
 //      brickArray는 현재 브릭의 cgpoint값
 //      [(1.0, 1.0), (-1.0, 0.0), (0.0, 0.0), (1.0, 0.0)]
-      for item in Variables.brickArrays {
+      for (i, item) in Variables.brickArrays.enumerated() {
         let x = Int(item.x) + Variables.dx
         let y = Int(item.y) + Variables.dy
         
+        //블록 데이터 변경
         //위에서 Variables.dx -= 1 을했으니 X+1로 표시
         Variables.backarrays[y][x+1] -= 1 //그냥 단순하게 생각해. 먼저 바꾸기 이전값은 -=1 해준다.
         Variables.backarrays[y][x] += 1 //그리고 새로 바뀌는 값은 +=1 해준다.
+        
+        
+        //블록 화면이동
+        action = SKAction.moveBy(x: -(CGFloat(Variables.brickValue.brickSize)), y: 0, duration: 0.1)
+        Variables.brickNode[i].run(action)
       }
       checkBrick() //테스트
     }
