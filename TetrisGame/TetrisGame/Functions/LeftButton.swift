@@ -8,18 +8,34 @@
 import Foundation
 import SpriteKit
 
+//하단의 컨트롤 레프트 버튼을 말하는 것임
 class LeftButton {
-  
+  let leftControlbutton = SKSpriteNode()
+
   init() {
-    let btn = SKSpriteNode()
-    btn.texture = SKTexture(imageNamed: "left_btn1")
-    btn.size = CGSize(width: 50, height: 50)
-    btn.name = "left"
-    btn.position = CGPoint(x: 50, y: -Int(Variables.scene.frame.height) + 50)
-    Variables.scene.addChild(btn)
+    leftControlbutton.texture = SKTexture(imageNamed: "left_btn1")
+    leftControlbutton.size = CGSize(width: 50, height: 50)
+    leftControlbutton.name = "left"
+    leftControlbutton.position = CGPoint(x: 50, y: -Int(Variables.scene.frame.height) + 50)
+    Variables.scene.addChild(leftControlbutton)
+  }
+  
+  func leftAnimate() {
+    var textures = Array<SKTexture>()
+    for i in 1...15 {
+      let name = "left_btn\(i)"
+      let texture = SKTexture(imageNamed: name)
+      textures.append(texture)
+    }
+    let action = SKAction.animate(with: textures, timePerFrame: 0.03)
+    leftControlbutton.run(action)
   }
   
   func brickMoveLeft() {
+    defer {
+      checkBrick() //데이터 잘 변하고 있나 테스트
+    }
+    
     if isMovale() {
       Variables.dx -= 1
       var action = SKAction()
@@ -34,13 +50,13 @@ class LeftButton {
         Variables.backarrays[y][x+1] -= 1 //그냥 단순하게 생각해. 먼저 바꾸기 이전값은 -=1 해준다.
         Variables.backarrays[y][x] += 1 //그리고 새로 바뀌는 값은 +=1 해준다.
         
-        
         //블록 화면이동
         action = SKAction.moveBy(x: -(CGFloat(Variables.brickValue.brickSize)), y: 0, duration: 0.1)
         Variables.brickNode[i].run(action)
       }
-      checkBrick() //테스트
     }
+    //하단부 레프트 버튼 이동 애니메이션
+    leftAnimate()
   }
   
   //브릭의 제일 좌측 네모를 찾고 그것의 왼쪽이 1이면 이동불가, 0이면 이동가능
