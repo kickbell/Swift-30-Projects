@@ -18,4 +18,15 @@ class LeftButton {
     btn.position = CGPoint(x: 50, y: -Int(Variables.scene.frame.height) + 50)
     Variables.scene.addChild(btn)
   }
+  
+  func brickMoveLeft() {
+    if isMovale() {
+      print(#function)
+    }
+  }
+  
+  //브릭의 제일 좌측 네모를 찾고 그것의 왼쪽이 1이면 이동불가, 0이면 이동가능
+  func isMovale() -> Bool {
+    return true
+  }
 }
