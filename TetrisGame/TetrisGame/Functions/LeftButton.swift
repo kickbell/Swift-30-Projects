@@ -21,7 +21,19 @@ class LeftButton {
   
   func brickMoveLeft() {
     if isMovale() {
-      print(#function)
+      Variables.dx -= 1
+      
+//      brickArray는 현재 브릭의 cgpoint값
+//      [(1.0, 1.0), (-1.0, 0.0), (0.0, 0.0), (1.0, 0.0)]
+      for item in Variables.brickArrays {
+        let x = Int(item.x) + Variables.dx
+        let y = Int(item.y) + Variables.dy
+        
+        //위에서 Variables.dx -= 1 을했으니 X+1로 표시
+        Variables.backarrays[y][x+1] -= 1 //그냥 단순하게 생각해. 먼저 바꾸기 이전값은 -=1 해준다.
+        Variables.backarrays[y][x] += 1 //그리고 새로 바뀌는 값은 +=1 해준다.
+      }
+      checkBrick() //테스트
     }
   }
   
@@ -47,3 +59,4 @@ class LeftButton {
     }
   }
 }
+
