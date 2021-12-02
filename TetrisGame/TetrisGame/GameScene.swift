@@ -8,6 +8,16 @@
 import SpriteKit
 import GameplayKit
 
+// MARK: - 잘바뀌었는지 확인하는 테스트함수
+
+public func checkBrick(){
+  let arrays = Variables.backarrays
+  for item in arrays {
+    print(item)
+  }
+  print(Variables.brickArrays)
+}
+
 class GameScene: SKScene {
   
   var leftButton: LeftButton?
@@ -16,17 +26,12 @@ class GameScene: SKScene {
     Variables.scene = self
     _ = BackGround()
     _ = BrickGenerator()
-    //      checkBrick()
+    checkBrick()
     leftButton = LeftButton()
     
   }
   
-  func checkBrick(){
-    let arrays = Variables.backarrays
-    for item in arrays {
-      print(item)
-    }
-  }
+
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     let touch = touches.first
