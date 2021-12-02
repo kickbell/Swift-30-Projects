@@ -9,18 +9,18 @@ import Foundation
 import SpriteKit
 
 //하단의 컨트롤 레프트 버튼을 말하는 것임
-class LeftButton {
-  let leftControlbutton = SKSpriteNode()
+class LeftControlButton {
+  let btn = SKSpriteNode()
 
   init() {
-    leftControlbutton.texture = SKTexture(imageNamed: "left_btn1")
-    leftControlbutton.size = CGSize(width: 50, height: 50)
-    leftControlbutton.name = "left"
-    leftControlbutton.position = CGPoint(x: 50, y: -Int(Variables.scene.frame.height) + 50)
-    Variables.scene.addChild(leftControlbutton)
+    btn.texture = SKTexture(imageNamed: "left_btn1")
+    btn.size = CGSize(width: 50, height: 50)
+    btn.name = "left"
+    btn.position = CGPoint(x: 50, y: -Int(Variables.scene.frame.height) + 50)
+    Variables.scene.addChild(btn)
   }
   
-  func leftAnimate() {
+  func animate() {
     var textures = Array<SKTexture>()
     for i in 1...15 {
       let name = "left_btn\(i)"
@@ -28,7 +28,7 @@ class LeftButton {
       textures.append(texture)
     }
     let action = SKAction.animate(with: textures, timePerFrame: 0.03)
-    leftControlbutton.run(action)
+    btn.run(action)
   }
   
   func brickMoveLeft() {
@@ -56,7 +56,7 @@ class LeftButton {
       }
     }
     //하단부 레프트 버튼 이동 애니메이션
-    leftAnimate()
+    animate()
   }
   
   //브릭의 제일 좌측 네모를 찾고 그것의 왼쪽이 1이면 이동불가, 0이면 이동가능

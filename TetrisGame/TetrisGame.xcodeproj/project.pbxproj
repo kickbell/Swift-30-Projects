@@ -17,7 +17,8 @@
 		A88B1B2D275521140046EF47 /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88B1B2C275521140046EF47 /* Variables.swift */; };
 		A88B1B302755218B0046EF47 /* Brick.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88B1B2F2755218B0046EF47 /* Brick.swift */; };
 		A88B1B32275525B50046EF47 /* BrickGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88B1B31275525B50046EF47 /* BrickGenerator.swift */; };
-		A8AE51B72758A832008C88D0 /* LeftButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE51B62758A832008C88D0 /* LeftButton.swift */; };
+		A8AE51B72758A832008C88D0 /* LeftControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE51B62758A832008C88D0 /* LeftControlButton.swift */; };
+		A8AE51BA2758F799008C88D0 /* RightControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE51B92758F799008C88D0 /* RightControlButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +33,8 @@
 		A88B1B2C275521140046EF47 /* Variables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variables.swift; sourceTree = "<group>"; };
 		A88B1B2F2755218B0046EF47 /* Brick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brick.swift; sourceTree = "<group>"; };
 		A88B1B31275525B50046EF47 /* BrickGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrickGenerator.swift; sourceTree = "<group>"; };
-		A8AE51B62758A832008C88D0 /* LeftButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftButton.swift; sourceTree = "<group>"; };
+		A8AE51B62758A832008C88D0 /* LeftControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftControlButton.swift; sourceTree = "<group>"; };
+		A8AE51B92758F799008C88D0 /* RightControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightControlButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +101,8 @@
 		A8AE51B82758A836008C88D0 /* Functions */ = {
 			isa = PBXGroup;
 			children = (
-				A8AE51B62758A832008C88D0 /* LeftButton.swift */,
+				A8AE51B62758A832008C88D0 /* LeftControlButton.swift */,
+				A8AE51B92758F799008C88D0 /* RightControlButton.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -177,9 +180,10 @@
 			files = (
 				A88B1B1927551EB30046EF47 /* GameScene.swift in Sources */,
 				A88B1B1B27551EB30046EF47 /* GameViewController.swift in Sources */,
-				A8AE51B72758A832008C88D0 /* LeftButton.swift in Sources */,
+				A8AE51B72758A832008C88D0 /* LeftControlButton.swift in Sources */,
 				A88B1B1327551EB30046EF47 /* AppDelegate.swift in Sources */,
 				A88B1B32275525B50046EF47 /* BrickGenerator.swift in Sources */,
+				A8AE51BA2758F799008C88D0 /* RightControlButton.swift in Sources */,
 				A88B1B2A275520000046EF47 /* BackGround.swift in Sources */,
 				A88B1B2D275521140046EF47 /* Variables.swift in Sources */,
 				A88B1B302755218B0046EF47 /* Brick.swift in Sources */,

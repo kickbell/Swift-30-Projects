@@ -20,14 +20,15 @@ public func checkBrick(){
 
 class GameScene: SKScene {
   
-  var leftButton: LeftButton?
-  
+  var leftControlButton: LeftControlButton?
+  var rightControlButton: RightControlButton?
   override func didMove(to view: SKView) {
     Variables.scene = self
     _ = BackGround()
     _ = BrickGenerator()
     checkBrick()
-    leftButton = LeftButton()
+    leftControlButton = LeftControlButton()
+    rightControlButton = RightControlButton()
     
   }
   
@@ -39,7 +40,10 @@ class GameScene: SKScene {
     let node = nodes(at: location!)
     for item in node {
       if item.name == "left" {
-        leftButton?.brickMoveLeft()
+        leftControlButton?.brickMoveLeft()
+      }
+      if item.name == "right" {
+        rightControlButton?.brickMoveLeft()
       }
     }
   }
