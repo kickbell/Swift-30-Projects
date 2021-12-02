@@ -16,4 +16,5 @@ struct Variables {
   static var dy = 2 //y의 시작점
   static let gab = 1 //브릭 사이의 선
   static var startPoint = CGPoint()
+  static var brickArrays = Array<CGPoint>()
 }
