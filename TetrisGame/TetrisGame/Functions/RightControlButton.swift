@@ -34,7 +34,7 @@ class RightControlButton {
   
   func brickMoveLeft() {
     defer {
-      checkBrick() //데이터 잘 변하고 있나 테스트
+      checkBrick() //데이터 잘 변하고 있나 테스트.
     }
     
     if isMovale() {
@@ -67,7 +67,6 @@ class RightControlButton {
         right = i
       }
     }
-    
     //이동 가능 여부 판단
     let startXValue = Variables.dx + 1
     let xValue = Int(right.x) + startXValue
