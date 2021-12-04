@@ -8,7 +8,7 @@
 import Foundation
 import SpriteKit
 
-//하단의 컨트롤 라이트 버튼을 말하는 것임
+//하단의 컨트롤 라이트 버튼을 말하는 것임.
 //상세한 주석은 LeftControlButton에 있음.
 class RightControlButton {
   let btn = SKSpriteNode()
