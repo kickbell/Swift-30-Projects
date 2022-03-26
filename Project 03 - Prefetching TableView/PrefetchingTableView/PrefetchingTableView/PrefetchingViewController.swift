@@ -22,8 +22,6 @@ class PrefetchingViewController: UIViewController {
   
   private let viewModel = (1...100).map { "row \($0)" }
   
-  private let url = "https://source.unsplash.com/random/\(300)x\(300)"
-
   override func viewDidLoad() {
     super.viewDidLoad()
     addSubviews()
