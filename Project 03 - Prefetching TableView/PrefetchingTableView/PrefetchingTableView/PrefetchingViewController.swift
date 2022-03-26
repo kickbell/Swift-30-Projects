@@ -55,9 +55,7 @@ extension PrefetchingViewController: UITableViewDelegate, UITableViewDataSource 
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? PhotoCell else {
-      return UITableViewCell()
-    }
+    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PhotoCell
     cell.configure(with: viewModel[indexPath.row])
     return cell
   }
