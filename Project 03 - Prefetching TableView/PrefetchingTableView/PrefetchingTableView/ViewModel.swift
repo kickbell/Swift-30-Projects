@@ -12,13 +12,22 @@ class ViewModel {
   
   init() {}
   
+  private var isDownloading = false
   private var cachedImage: UIImage?
+  private var callback: ((UIImage?) -> Void)?
   
-  func downloadImage(completion: @escaping (UIImage?) -> Void) {
+  func downloadImage(completion: ((UIImage?) -> Void)?) {
     if let image = cachedImage {
-      completion(image)
+      completion?(image)
       return
     }
+    
+    guard !isDownloading else {
+      self.callback = completion
+      return
+    }
+    
+    isDownloading = true
     
     let size = Int.random(in: 100...350)
     
@@ -33,7 +42,9 @@ class ViewModel {
       DispatchQueue.main.async {
         let image = UIImage(data: data)
         self?.cachedImage = image
-        completion(image)
+        self?.callback?(image)
+        self?.callback = nil
+        completion?(image)
       }
     }
     task.resume()

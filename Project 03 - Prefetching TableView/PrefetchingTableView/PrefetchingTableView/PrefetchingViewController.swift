@@ -26,9 +26,6 @@ class PrefetchingViewController: UIViewController {
     addSubviews()
     addConstraints()
     setupViews()
-    
-    
-    print(1...10 ~= 4, "sadfasf")
   }
   
   private func addSubviews() {
@@ -66,9 +63,11 @@ extension PrefetchingViewController: UITableViewDelegate, UITableViewDataSource 
 
 extension PrefetchingViewController: UITableViewDataSourcePrefetching {
   func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-    let a = indexPaths.indices
-    print(a)
     
+    for indexPath in indexPaths {
+      let viewModel = viewModel[indexPath.row]
+      viewModel.downloadImage(completion: nil)
+    }
     
   }
   
