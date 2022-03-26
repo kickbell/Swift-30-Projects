@@ -35,8 +35,6 @@ class PhotoCell: UITableViewCell {
   
   private func addConstraints() {
     NSLayoutConstraint.activate([
-      photo.widthAnchor.constraint(equalToConstant: 300),
-      photo.heightAnchor.constraint(equalToConstant: 300),
       photo.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
       photo.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
       photo.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)

@@ -14,7 +14,6 @@ class PrefetchingViewController: UIViewController {
     tableView.backgroundColor = .systemBackground
     tableView.register(PhotoCell.self, forCellReuseIdentifier: "cell")
     tableView.translatesAutoresizingMaskIntoConstraints = false
-    
     tableView.rowHeight = UITableView.automaticDimension
     tableView.estimatedRowHeight = 300
     return tableView
@@ -27,6 +26,9 @@ class PrefetchingViewController: UIViewController {
     addSubviews()
     addConstraints()
     setupViews()
+    
+    
+    print(1...10 ~= 4, "sadfasf")
   }
   
   private func addSubviews() {
@@ -45,6 +47,7 @@ class PrefetchingViewController: UIViewController {
   private func setupViews() {
     tableView.delegate = self
     tableView.dataSource = self
+    tableView.prefetchDataSource = self
   }
 }
 
@@ -61,3 +64,30 @@ extension PrefetchingViewController: UITableViewDelegate, UITableViewDataSource 
   }
 }
 
+extension PrefetchingViewController: UITableViewDataSourcePrefetching {
+  func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+    let a = indexPaths.indices
+    print(a)
+    
+    
+  }
+  
+  
+  
+  
+}
+
+
+
+
+extension Array {
+    subscript (safe index: Int) -> Element? {
+      // iOS 9 or later
+      
+      //Range<Int>
+        return indices ~= index ? self[index] : nil
+        // iOS 8 or earlier
+        // return startIndex <= index && index < endIndex ? self[index] : nil
+        // return 0 <= index && index < self.count ? self[index] : nil
+    }
+}

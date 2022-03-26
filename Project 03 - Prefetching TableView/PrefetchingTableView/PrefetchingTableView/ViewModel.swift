@@ -32,7 +32,6 @@ class ViewModel {
       }
       DispatchQueue.main.async {
         let image = UIImage(data: data)
-        print(image.debugDescription)
         self?.cachedImage = image
         completion(image)
       }
