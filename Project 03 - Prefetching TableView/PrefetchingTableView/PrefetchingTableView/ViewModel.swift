@@ -20,7 +20,9 @@ class ViewModel {
       return
     }
     
-    guard let url = URL(string: "https://source.unsplash.com/random/\(300)x\(300)") else {
+    let size = Int.random(in: 100...350)
+    
+    guard let url = URL(string: "https://source.unsplash.com/random/\(size)x\(size)") else {
       return
     }
     
