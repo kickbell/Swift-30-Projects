@@ -12,7 +12,7 @@ class PrefetchingViewController: UIViewController {
   private let tableView: UITableView = {
     let tableView = UITableView()
     tableView.backgroundColor = .systemBackground
-    tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    tableView.register(PhotoCell.self, forCellReuseIdentifier: "cell")
     tableView.translatesAutoresizingMaskIntoConstraints = false
     
     tableView.rowHeight = UITableView.automaticDimension
@@ -20,7 +20,7 @@ class PrefetchingViewController: UIViewController {
     return tableView
   }()
   
-  private let viewModel = (1...100).map { "row \($0)" }
+  private let viewModel = (1...100).map { _ in ViewModel() }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -55,8 +55,10 @@ extension PrefetchingViewController: UITableViewDelegate, UITableViewDataSource 
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-    cell.textLabel?.text = viewModel[indexPath.row]
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? PhotoCell else {
+      return UITableViewCell()
+    }
+    cell.configure(with: viewModel[indexPath.row])
     return cell
   }
 }
