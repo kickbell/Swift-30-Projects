@@ -57,6 +57,7 @@ extension PrefetchingViewController: UITableViewDelegate, UITableViewDataSource 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PhotoCell
     cell.configure(with: viewModel[indexPath.row])
+    print("cellForRowAt : \(indexPath.row)")
     return cell
   }
 }
@@ -64,8 +65,8 @@ extension PrefetchingViewController: UITableViewDelegate, UITableViewDataSource 
 extension PrefetchingViewController: UITableViewDataSourcePrefetching {
   func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
     for indexPath in indexPaths {
+      print("Prefetching : \(indexPath.row)")
       let viewModel = viewModel[indexPath.row]
-      
       viewModel.downloadImage(completion: nil)
     }
   }
