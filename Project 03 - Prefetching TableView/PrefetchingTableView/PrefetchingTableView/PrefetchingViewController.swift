@@ -65,7 +65,7 @@ extension PrefetchingViewController: UITableViewDelegate, UITableViewDataSource 
 extension PrefetchingViewController: UITableViewDataSourcePrefetching {
   func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
     for indexPath in indexPaths {
-      print("Prefetching: \(indexPath.row)")
+      print("Prefetching : \(indexPath.row)")
       let viewModel = viewModel[indexPath.row]
       viewModel.downloadImage(completion: nil)
     }
