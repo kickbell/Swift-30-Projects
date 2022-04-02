@@ -26,6 +26,8 @@ class PrefetchingViewController: UIViewController {
     addSubviews()
     addConstraints()
     setupViews()
+    
+    self.navigationController?.title = "asf"
   }
   
   private func addSubviews() {
@@ -57,7 +59,7 @@ extension PrefetchingViewController: UITableViewDelegate, UITableViewDataSource 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PhotoCell
     cell.configure(with: viewModel[indexPath.row])
-    print("cellForRowAt : \(indexPath.row)")
+    print("cellForRowAt: \(indexPath.row)")
     return cell
   }
 }
