@@ -25,7 +25,7 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func buySubscription(to productType: Int) {
+    func buySubscription() {
         let child = BuyCoordinator(navigationController: navigationController)
         child.parentCoordinator = self
         childCoordinators.append(child)
