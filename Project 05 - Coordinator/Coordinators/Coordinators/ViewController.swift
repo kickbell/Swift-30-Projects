@@ -22,7 +22,4 @@ class ViewController: UIViewController, Storyboared {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-
 }
-
