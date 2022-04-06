@@ -8,7 +8,8 @@
 import Foundation
 import UIKit
 
-class MainCoordinator: Coordinator {
+class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
+    
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     
@@ -17,6 +18,8 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
+        navigationController.delegate = self
+        
         let vc = ViewController.instantiate()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
@@ -41,6 +44,25 @@ class MainCoordinator: Coordinator {
                 childCoordinators.remove(at: index)
                 break
             }
+        }
+    }
+    
+    // 뒤로가는걸 감지하려고 이걸 만든거야.
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        
+        // 일단 뷰컨을 갖고와.
+        guard let fromViewController = navigationController.transitionCoordinator?.viewController(forKey: .from) else {
+            return
+        }
+
+        // 그래서 그게 네비게이션 컨트롤러에 포함되어있으면 push 니까 그냥 무시하고 리턴.
+        if navigationController.viewControllers.contains(fromViewController) {
+            return
+        }
+        
+        // 그게 아니고, 가져온 뷰컨이 buy면 pop이므로 작업을 실행
+        if let buyViewController = fromViewController as? BuyViewController {
+            childDidFinish(buyViewController.coordinator)
         }
     }
 }
