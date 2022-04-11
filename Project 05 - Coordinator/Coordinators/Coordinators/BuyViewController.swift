@@ -15,6 +15,5 @@ class BuyViewController: UIViewController, Storyboared {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 }
