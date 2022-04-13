@@ -27,7 +27,6 @@ class ViewController: UIViewController {
             .debug()
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { value in
-//                print(value.map { $0.id }.reduce(0, +))
 //                guard value != [] else { return }
 //                if let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
 //                    self.present(detailVC, animated: true)
