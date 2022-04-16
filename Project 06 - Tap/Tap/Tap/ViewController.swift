@@ -22,15 +22,15 @@ class ViewController: UIViewController {
     
     private func bind() {
         nextButton.rx.tap
-//            .flatMapLatest(Service.requestRx)
-            .flatMapLatest(Service.requestRxImage)
+            .flatMapLatest(Service.requestRx)
+//            .flatMapLatest(Service.requestRxImage)
             .debug()
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { value in
-//                guard value != [] else { return }
-//                if let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
-//                    self.present(detailVC, animated: true)
-//                }
+                guard value != [] else { return }
+                if let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
+                    self.present(detailVC, animated: true)
+                }
             })
             .disposed(by: disposeBag)
     }
