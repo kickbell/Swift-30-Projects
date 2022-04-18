@@ -11,7 +11,7 @@ class BuyViewController: UIViewController, Storyboared {
 
     weak var coordinator: BuyCoordinator?
     
-    var selectedProdct = 0
+//    var selectedProdct = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
