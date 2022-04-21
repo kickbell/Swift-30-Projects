@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     }
     
     private func bind() {
+        
         nextButton.rx.tap
             .flatMapLatest(Service.requestRx)
 //            .flatMapLatest(Service.requestRxImage)
