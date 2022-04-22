@@ -16,6 +16,7 @@
 		A84625AA2805C6E600C5C17D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A84625A82805C6E600C5C17D /* LaunchScreen.storyboard */; };
 		A84625B22805C72F00C5C17D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84625B12805C72F00C5C17D /* DetailViewController.swift */; };
 		A84625B42805C73800C5C17D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84625B32805C73800C5C17D /* Service.swift */; };
+		A84625B62812E9C600C5C17D /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84625B52812E9C600C5C17D /* ThirdViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		A84625AB2805C6E600C5C17D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A84625B12805C72F00C5C17D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A84625B32805C73800C5C17D /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		A84625B52812E9C600C5C17D /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		FF5ACA320F769B1026BA5100 /* Pods-Tap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tap.debug.xcconfig"; path = "Target Support Files/Pods-Tap/Pods-Tap.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +82,7 @@
 				A846259F2805C6E500C5C17D /* SceneDelegate.swift */,
 				A84625A12805C6E500C5C17D /* ViewController.swift */,
 				A84625B12805C72F00C5C17D /* DetailViewController.swift */,
+				A84625B52812E9C600C5C17D /* ThirdViewController.swift */,
 				A84625B32805C73800C5C17D /* Service.swift */,
 				A84625A32805C6E500C5C17D /* Main.storyboard */,
 				A84625A62805C6E600C5C17D /* Assets.xcassets */,
@@ -216,6 +219,7 @@
 				A846259E2805C6E500C5C17D /* AppDelegate.swift in Sources */,
 				A84625B42805C73800C5C17D /* Service.swift in Sources */,
 				A84625A02805C6E500C5C17D /* SceneDelegate.swift in Sources */,
+				A84625B62812E9C600C5C17D /* ThirdViewController.swift in Sources */,
 				A84625B22805C72F00C5C17D /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
