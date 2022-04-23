@@ -42,6 +42,7 @@ class ViewController: UIViewController {
             .map { $0.map { _ in ThirdViewController()} }
             .subscribe(onNext: { data in
 //                if let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
+                //
                     self.navigationController?.pushViewControllers(data, animated: false)
 //                }
             })
