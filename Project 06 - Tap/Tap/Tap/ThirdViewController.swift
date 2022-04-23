@@ -8,23 +8,26 @@
 import UIKit
 
 class ThirdViewController: UIViewController {
+    let popupView = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .yellow
-        // Do any additional setup after loading the view.
+        
+        popupView.setTitle("popupView", for: .normal)
+        popupView.setTitleColor(.white, for: .normal)
+        popupView.backgroundColor = .blue
+        popupView.addTarget(self, action: #selector(pop), for: .touchUpInside)
+        popupView.frame = CGRect(x: 0, y: view.frame.height/2, width: view.frame.width, height: view.frame.height/2)
+        popupView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
+        popupView.layer.cornerRadius = 20
+        
+        self.view.addSubview(popupView)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func pop() {
+        self.navigationController?.popViewControllerFromTop(view: popupView)
     }
-    */
-
+    
 }
