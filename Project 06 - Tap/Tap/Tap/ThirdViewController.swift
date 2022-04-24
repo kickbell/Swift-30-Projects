@@ -22,7 +22,6 @@ class ThirdViewController: UIViewController {
         popupView.frame = CGRect(x: 0, y: view.frame.height/2, width: view.frame.width, height: view.frame.height/2)
         popupView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
         popupView.layer.cornerRadius = 20
-        
         self.view.addSubview(popupView)
     }
     
