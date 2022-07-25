@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class ViewController: UIViewController {
 
     private var repositories: [Repository] = [] {
@@ -38,7 +37,7 @@ class ViewController: UIViewController {
         }
         
         var request = URLRequest(url: url)
-//        request.setValue("token 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", forHTTPHeaderField: "Authorization")
+        request.setValue("token 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", forHTTPHeaderField: "Authorization")
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard error == nil,
