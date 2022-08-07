@@ -19,6 +19,58 @@ struct User: Identifiable {
     let isBlocked: Bool
 }
 
+class BlockHeaderView: UIView {
+    var title: UILabel = {
+        let label = UILabel()
+        label.text = "차단된 사용자"
+        label.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        return label
+    }()
+    
+    lazy var expandButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "chevron.down"), for: .normal)
+        button.setImage(UIImage(systemName: "chevron.up"), for: .selected)
+        button.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        button.addTarget(self, action: #selector(didTapExpand), for: .touchUpInside)
+        button.isSelected = false
+        return button
+    }()
+    
+    lazy var hStack: UIStackView = {
+        let stack = UIStackView()
+        stack.distribution = .fill
+        stack.alignment = .fill
+        stack.axis = .horizontal
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.addArrangedSubview(title)
+        stack.addArrangedSubview(expandButton)
+        return stack
+    }()
+    
+    @objc func didTapExpand() {
+        callBack?()
+        expandButton.isSelected = !expandButton.isSelected
+    }
+    
+    var callBack: (() -> ())?
+    
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        self.addSubview(hStack)
+        
+        NSLayoutConstraint.activate([
+            hStack.topAnchor.constraint(equalTo: self.topAnchor),
+            hStack.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            hStack.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            hStack.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+        ])
+    }
+    
+}
+
 class ExpandViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -43,6 +95,7 @@ class ExpandViewController: UIViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
+        title = "Expand TableView"
     }
     
 
@@ -53,8 +106,26 @@ extension ExpandViewController: UITableViewDelegate, UITableViewDataSource {
         return 2
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return section == 0 ? "차단된 사용자" : "차단되지 않은 사용자"
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        switch section {
+        case 0 :
+            let v = BlockHeaderView()
+            v.title.text = "차단된 사용자 \(data.blockUser.count)"
+            v.callBack = {
+                print("차단..")
+            }
+            return v
+        case 1:
+            let v = BlockHeaderView()
+            v.title.text = "차단되지 않은 사용자 \(data.nonBlolckUser.count)"
+            v.callBack = {
+                print("노노차단..")
+            }
+            return v
+        default: break
+        }
+
+        return nil
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
