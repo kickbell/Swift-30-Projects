@@ -20,6 +20,8 @@
 		A83297A1289FBA1000616753 /* expand.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A83297A0289FBA1000616753 /* expand.storyboard */; };
 		A8DC8FFA289FE81C001A1D18 /* BlockHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DC8FF9289FE81C001A1D18 /* BlockHeaderView.swift */; };
 		A8DC8FFC289FE837001A1D18 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DC8FFB289FE837001A1D18 /* Model.swift */; };
+		A8DC8FFF289FE9D5001A1D18 /* BlockItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DC8FFD289FE9D5001A1D18 /* BlockItemCell.swift */; };
+		A8DC9000289FE9D5001A1D18 /* BlockItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8DC8FFE289FE9D5001A1D18 /* BlockItemCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		A83297A0289FBA1000616753 /* expand.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = expand.storyboard; sourceTree = "<group>"; };
 		A8DC8FF9289FE81C001A1D18 /* BlockHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockHeaderView.swift; sourceTree = "<group>"; };
 		A8DC8FFB289FE837001A1D18 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		A8DC8FFD289FE9D5001A1D18 /* BlockItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockItemCell.swift; sourceTree = "<group>"; };
+		A8DC8FFE289FE9D5001A1D18 /* BlockItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlockItemCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,8 @@
 				A832979D289FB93200616753 /* ExpandViewController.swift */,
 				A8DC8FF9289FE81C001A1D18 /* BlockHeaderView.swift */,
 				A8DC8FFB289FE837001A1D18 /* Model.swift */,
+				A8DC8FFD289FE9D5001A1D18 /* BlockItemCell.swift */,
+				A8DC8FFE289FE9D5001A1D18 /* BlockItemCell.xib */,
 			);
 			path = ExpandScene;
 			sourceTree = "<group>";
@@ -158,6 +164,7 @@
 				A832978E289FB2B100616753 /* LaunchScreen.storyboard in Resources */,
 				A8329798289FB72F00616753 /* player.storyboard in Resources */,
 				A832978B289FB2B100616753 /* Assets.xcassets in Resources */,
+				A8DC9000289FE9D5001A1D18 /* BlockItemCell.xib in Resources */,
 				A832979C289FB77B00616753 /* showmore.storyboard in Resources */,
 				A8329789289FB2B000616753 /* Main.storyboard in Resources */,
 				A83297A1289FBA1000616753 /* expand.storyboard in Resources */,
@@ -175,6 +182,7 @@
 				A8DC8FFA289FE81C001A1D18 /* BlockHeaderView.swift in Sources */,
 				A8329786289FB2B000616753 /* ViewController.swift in Sources */,
 				A8DC8FFC289FE837001A1D18 /* Model.swift in Sources */,
+				A8DC8FFF289FE9D5001A1D18 /* BlockItemCell.swift in Sources */,
 				A8329782289FB2B000616753 /* AppDelegate.swift in Sources */,
 				A8329784289FB2B000616753 /* SceneDelegate.swift in Sources */,
 			);

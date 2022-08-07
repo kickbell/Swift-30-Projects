@@ -33,6 +33,7 @@ class ExpandViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(UINib(nibName: "BlockItemCell", bundle: nil), forCellReuseIdentifier: "BlockItemCell")
         title = "Expand TableView"
     }
 }
@@ -80,10 +81,10 @@ extension ExpandViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text =
-        indexPath.section == 0 ? data.blockUser[indexPath.row].chanelName : data.nonBlolckUser[indexPath.row].chanelName
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "BlockItemCell", for: indexPath) as? BlockItemCell {
+            return cell
+        }
+        return UITableViewCell()
     }
     
 }
