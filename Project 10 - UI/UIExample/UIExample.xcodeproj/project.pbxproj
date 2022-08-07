@@ -13,6 +13,10 @@
 		A8329789289FB2B000616753 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8329787289FB2B000616753 /* Main.storyboard */; };
 		A832978B289FB2B100616753 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A832978A289FB2B100616753 /* Assets.xcassets */; };
 		A832978E289FB2B100616753 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A832978C289FB2B100616753 /* LaunchScreen.storyboard */; };
+		A8329796289FB71F00616753 /* expand.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8329795289FB71F00616753 /* expand.storyboard */; };
+		A8329798289FB72F00616753 /* player.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8329797289FB72F00616753 /* player.storyboard */; };
+		A832979A289FB76B00616753 /* setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8329799289FB76B00616753 /* setting.storyboard */; };
+		A832979C289FB77B00616753 /* showmore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A832979B289FB77B00616753 /* showmore.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		A832978A289FB2B100616753 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A832978D289FB2B100616753 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A832978F289FB2B100616753 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8329795289FB71F00616753 /* expand.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = expand.storyboard; sourceTree = "<group>"; };
+		A8329797289FB72F00616753 /* player.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = player.storyboard; sourceTree = "<group>"; };
+		A8329799289FB76B00616753 /* setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = setting.storyboard; sourceTree = "<group>"; };
+		A832979B289FB77B00616753 /* showmore.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = showmore.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +71,10 @@
 				A832978A289FB2B100616753 /* Assets.xcassets */,
 				A832978C289FB2B100616753 /* LaunchScreen.storyboard */,
 				A832978F289FB2B100616753 /* Info.plist */,
+				A8329795289FB71F00616753 /* expand.storyboard */,
+				A8329797289FB72F00616753 /* player.storyboard */,
+				A8329799289FB76B00616753 /* setting.storyboard */,
+				A832979B289FB77B00616753 /* showmore.storyboard */,
 			);
 			path = UIExample;
 			sourceTree = "<group>";
@@ -125,8 +137,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8329796289FB71F00616753 /* expand.storyboard in Resources */,
+				A832979A289FB76B00616753 /* setting.storyboard in Resources */,
 				A832978E289FB2B100616753 /* LaunchScreen.storyboard in Resources */,
+				A8329798289FB72F00616753 /* player.storyboard in Resources */,
 				A832978B289FB2B100616753 /* Assets.xcassets in Resources */,
+				A832979C289FB77B00616753 /* showmore.storyboard in Resources */,
 				A8329789289FB2B000616753 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
