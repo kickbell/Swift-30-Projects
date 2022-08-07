@@ -18,6 +18,8 @@
 		A832979C289FB77B00616753 /* showmore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A832979B289FB77B00616753 /* showmore.storyboard */; };
 		A832979E289FB93200616753 /* ExpandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A832979D289FB93200616753 /* ExpandViewController.swift */; };
 		A83297A1289FBA1000616753 /* expand.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A83297A0289FBA1000616753 /* expand.storyboard */; };
+		A8DC8FFA289FE81C001A1D18 /* BlockHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DC8FF9289FE81C001A1D18 /* BlockHeaderView.swift */; };
+		A8DC8FFC289FE837001A1D18 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DC8FFB289FE837001A1D18 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		A832979B289FB77B00616753 /* showmore.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = showmore.storyboard; sourceTree = "<group>"; };
 		A832979D289FB93200616753 /* ExpandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandViewController.swift; sourceTree = "<group>"; };
 		A83297A0289FBA1000616753 /* expand.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = expand.storyboard; sourceTree = "<group>"; };
+		A8DC8FF9289FE81C001A1D18 /* BlockHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockHeaderView.swift; sourceTree = "<group>"; };
+		A8DC8FFB289FE837001A1D18 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +88,10 @@
 		A832979F289FB93B00616753 /* ExpandScene */ = {
 			isa = PBXGroup;
 			children = (
-				A832979D289FB93200616753 /* ExpandViewController.swift */,
 				A83297A0289FBA1000616753 /* expand.storyboard */,
+				A832979D289FB93200616753 /* ExpandViewController.swift */,
+				A8DC8FF9289FE81C001A1D18 /* BlockHeaderView.swift */,
+				A8DC8FFB289FE837001A1D18 /* Model.swift */,
 			);
 			path = ExpandScene;
 			sourceTree = "<group>";
@@ -166,7 +172,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A832979E289FB93200616753 /* ExpandViewController.swift in Sources */,
+				A8DC8FFA289FE81C001A1D18 /* BlockHeaderView.swift in Sources */,
 				A8329786289FB2B000616753 /* ViewController.swift in Sources */,
+				A8DC8FFC289FE837001A1D18 /* Model.swift in Sources */,
 				A8329782289FB2B000616753 /* AppDelegate.swift in Sources */,
 				A8329784289FB2B000616753 /* SceneDelegate.swift in Sources */,
 			);
