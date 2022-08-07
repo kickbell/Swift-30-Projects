@@ -75,7 +75,8 @@ class ExpandViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let data = BlockManager(
+    // MARK: - 핵심은 얘를 let으로 놓고 수정하지 않는 것
+    private let data = BlockManager(
         blockUser: [
             User(id: UUID().uuidString, profileImageUrl: nil, chanelName: "이순신", isBlocked: true),
             User(id: UUID().uuidString, profileImageUrl: nil, chanelName: "나대용", isBlocked: true),
@@ -92,40 +93,26 @@ class ExpandViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         tableView.delegate = self
         tableView.dataSource = self
         title = "Expand TableView"
     }
-    
-
 }
 
 extension ExpandViewController: UITableViewDelegate, UITableViewDataSource {
+    private func hideSection() {
+        
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        switch section {
-        case 0 :
-            let v = BlockHeaderView()
-            v.title.text = "차단된 사용자 \(data.blockUser.count)"
-            v.callBack = {
-                print("차단..")
-            }
-            return v
-        case 1:
-            let v = BlockHeaderView()
-            v.title.text = "차단되지 않은 사용자 \(data.nonBlolckUser.count)"
-            v.callBack = {
-                print("노노차단..")
-            }
-            return v
-        default: break
-        }
-
-        return nil
+        let v = BlockHeaderView()
+        v.title.text = section == 0 ? "차단된 사용자 \(data.blockUser.count)" : "차단되지 않은 사용자 \(data.nonBlolckUser.count)"
+        v.callBack = { [weak self] in self?.hideSection()}
+        return v
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -134,14 +121,8 @@ extension ExpandViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        switch indexPath.section {
-        case 0:
-            cell.textLabel?.text = data.blockUser[indexPath.row].chanelName
-        case 1:
-            cell.textLabel?.text = data.nonBlolckUser[indexPath.row].chanelName
-        default:
-            break
-        }
+        cell.textLabel?.text =
+        indexPath.section == 0 ? data.blockUser[indexPath.row].chanelName : data.nonBlolckUser[indexPath.row].chanelName
         return cell
     }
     
