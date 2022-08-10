@@ -100,8 +100,8 @@ class PlayerMainViewController: UIViewController {
         tap()
     }
     
-    
     @objc func tap() {
+
         if !isExpand {
             self.heightLayoutConstraint.priority = .defaultLow
             self.safeToTopLayoutConstraint.priority = .defaultHigh
@@ -113,7 +113,9 @@ class PlayerMainViewController: UIViewController {
         
         isExpand = !isExpand
         
-        
+        let tabbar = self.tabBarController?.tabBar
+        let offset = self.isExpand ? tabbar!.frame.size.height : -tabbar!.frame.size.height
+
         
         UIView.animate(withDuration: 0.3) {
             self.miniPlayerVarView.topStackView.isHidden = !self.isExpand
@@ -121,8 +123,10 @@ class PlayerMainViewController: UIViewController {
             self.miniPlayerVarView.button1.isHidden = self.isExpand
             self.miniPlayerVarView.button2.isHidden = self.isExpand
             self.miniPlayerVarView.bottomStackView.isHidden = !self.isExpand
-            
-            //top, bottom fade 효과
+
+            tabbar?.frame = tabbar?.frame.offsetBy(dx: 0, dy: offset) ?? CGRect.zero
+            tabbar?.isHidden = self.isExpand
+
             self.miniPlayerVarView.topStackView.alpha = !self.isExpand ? 0.0 : 1.0
             self.miniPlayerVarView.bottomStackView.alpha = !self.isExpand ? 0.0 : 1.0
 
