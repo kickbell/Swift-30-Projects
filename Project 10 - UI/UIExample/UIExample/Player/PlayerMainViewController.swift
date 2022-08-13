@@ -130,8 +130,6 @@ class PlayerMainViewController: UIViewController {
             self.miniPlayerVarView.topStackView.alpha = !self.isExpand ? 0.0 : 1.0
             self.miniPlayerVarView.bottomStackView.alpha = !self.isExpand ? 0.0 : 1.0
 
-            
-            
             self.view.layoutIfNeeded()
             
         } completion: { b in
