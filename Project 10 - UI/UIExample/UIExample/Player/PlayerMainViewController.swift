@@ -52,7 +52,13 @@ class PlayerMainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setup()
+        addActions()
+    }
+    
+    var isExpand = false
+    
+    private func setup() {
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipeLeft))
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipeRight))
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(swipeUp))
@@ -62,14 +68,10 @@ class PlayerMainViewController: UIViewController {
         swipeUp.direction = .up
         swipeDown.direction = .down
         self.miniPlayerVarView.gestureRecognizers = [swipeUp, swipeDown, swipeLeft, swipeRight]
-        
-        
-        
-        
-        
-        
+    }
+    
+    private func addActions() {
         miniPlayerVarView.callBack = {
-            
             let detailVC = DetailViewController()
             self.navigationController?.pushViewController(detailVC, animated: true)
         }
@@ -79,8 +81,6 @@ class PlayerMainViewController: UIViewController {
             self.present(detailVC, animated: true)
         }
     }
-    
-    var isExpand = false
     
     @objc func swipeLeft(_ sender: UISwipeGestureRecognizer) {
         print("swipeLeft...", sender.direction)
@@ -101,7 +101,6 @@ class PlayerMainViewController: UIViewController {
     }
     
     @objc func tap() {
-
         if !isExpand {
             self.heightLayoutConstraint.priority = .defaultLow
             self.safeToTopLayoutConstraint.priority = .defaultHigh
@@ -109,14 +108,12 @@ class PlayerMainViewController: UIViewController {
             self.heightLayoutConstraint.priority = .defaultHigh
             self.safeToTopLayoutConstraint.priority = .defaultLow
         }
-        
-        
         isExpand = !isExpand
+        
         
         let tabbar = self.tabBarController?.tabBar
         let offset = self.isExpand ? tabbar!.frame.size.height : -tabbar!.frame.size.height
 
-        
         UIView.animate(withDuration: 0.3) {
             self.miniPlayerVarView.topStackView.isHidden = !self.isExpand
             self.miniPlayerVarView.titleStackView.isHidden = self.isExpand
@@ -131,26 +128,6 @@ class PlayerMainViewController: UIViewController {
             self.miniPlayerVarView.bottomStackView.alpha = !self.isExpand ? 0.0 : 1.0
 
             self.view.layoutIfNeeded()
-            
-        } completion: { b in
-            
-            
         }
-        
-        
-        
-        
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
