@@ -117,6 +117,14 @@
                             <constraint firstItem="3s3-a5-BFq" firstAttribute="trailing" secondItem="B2y-i4-hf4" secondAttribute="trailing" id="w0U-Ud-1Ws"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="confirmButton" destination="9Si-in-bDr" id="odJ-Sq-p2V"/>
+                        <outlet property="latestPeriodButton" destination="JhL-NR-squ" id="5oz-Hs-ESL"/>
+                        <outlet property="oldestPeriodButton" destination="skk-Dy-6h4" id="2nb-nu-U57"/>
+                        <outlet property="oneMonthButton" destination="egG-gE-QIO" id="VuT-Jc-ik1"/>
+                        <outlet property="sixMonthButton" destination="SW4-TF-85x" id="hPM-IV-TKn"/>
+                        <outlet property="threeMonthButton" destination="chG-lY-kI1" id="GfJ-8h-MHC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q7M-8w-82a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
