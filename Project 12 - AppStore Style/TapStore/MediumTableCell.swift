@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MediumTableCell: UICollectionViewCell {
+class MediumTableCell: UICollectionViewCell, SelfConfiguringCell {
     static var reuseIdentifier: String = "MediumTableCell"
     
     let name = UILabel()
@@ -30,11 +30,17 @@ class MediumTableCell: UICollectionViewCell {
         
         buyButton.setImage(UIImage(systemName: "icloud.and.arrow.down"), for: .normal)
         
+        //이렇게 해줌으로써.. 이미지랑 버튼은 안늘어나게 하는거. 
+        imageView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        buyButton.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        
         let innerStackView = UIStackView(arrangedSubviews: [name, subtitle])
         innerStackView.axis = .vertical
         
         let outerStackView = UIStackView(arrangedSubviews: [imageView, innerStackView, buyButton])
         outerStackView.translatesAutoresizingMaskIntoConstraints = false
+        outerStackView.alignment = .center
+        outerStackView.spacing = 10
         contentView.addSubview(outerStackView)
         
         NSLayoutConstraint.activate([
