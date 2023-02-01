@@ -19,6 +19,10 @@ class FeaturedCell: UICollectionViewCell, SelfConfiguringCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        let separator = UIView(frame: .zero)
+        separator.translatesAutoresizingMaskIntoConstraints = false
+        separator.backgroundColor = .quaternaryLabel //투명한 종류의 레이블 색깔이라고함.
+        
         tagline.font = UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 12, weight: .bold))
         tagline.textColor = .systemBlue //라이트, 다크모드에 따라 달라지는 파랑색
         
@@ -32,18 +36,21 @@ class FeaturedCell: UICollectionViewCell, SelfConfiguringCell {
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFit
         
-        let stackView = UIStackView(arrangedSubviews: [tagline, name, subtitle, imageView])
+        let stackView = UIStackView(arrangedSubviews: [separator, tagline, name, subtitle, imageView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         contentView.addSubview(stackView)
         
         NSLayoutConstraint.activate([
+            separator.heightAnchor.constraint(equalToConstant: 1),
+            
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
         
+        stackView.setCustomSpacing(10, after: separator) //separator 밑에 10이라는 공간이 생김. 
         stackView.setCustomSpacing(10, after: subtitle) //subtitle밑에만 10을 추가해주는건가본데..?
     }
     
