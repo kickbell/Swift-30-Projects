@@ -22,6 +22,7 @@
 		5173343A23428D09003FF47B /* appstore.json in Resources */ = {isa = PBXBuildFile; fileRef = 5173343923428D09003FF47B /* appstore.json */; };
 		A82B8F93298AA8C5002E6FA6 /* SelfConfiguringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82B8F92298AA8C5002E6FA6 /* SelfConfiguringCell.swift */; };
 		A82B8F95298AA959002E6FA6 /* FeaturedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82B8F94298AA959002E6FA6 /* FeaturedCell.swift */; };
+		A82B8F97298ACA6E002E6FA6 /* MediumTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82B8F96298ACA6E002E6FA6 /* MediumTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		5173343923428D09003FF47B /* appstore.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = appstore.json; sourceTree = "<group>"; };
 		A82B8F92298AA8C5002E6FA6 /* SelfConfiguringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfConfiguringCell.swift; sourceTree = "<group>"; };
 		A82B8F94298AA959002E6FA6 /* FeaturedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCell.swift; sourceTree = "<group>"; };
+		A82B8F96298ACA6E002E6FA6 /* MediumTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				5173342D23428CF8003FF47B /* AppsViewController.swift */,
 				A82B8F92298AA8C5002E6FA6 /* SelfConfiguringCell.swift */,
 				A82B8F94298AA959002E6FA6 /* FeaturedCell.swift */,
+				A82B8F96298ACA6E002E6FA6 /* MediumTableCell.swift */,
 				5173342C23428CF8003FF47B /* ArcadeViewController.swift */,
 				5173342E23428CF8003FF47B /* GamesViewController.swift */,
 				5173342B23428CF8003FF47B /* SearchViewController.swift */,
@@ -175,6 +178,7 @@
 				5173343823428CF8003FF47B /* Bundle-Decodable.swift in Sources */,
 				A82B8F95298AA959002E6FA6 /* FeaturedCell.swift in Sources */,
 				A82B8F93298AA8C5002E6FA6 /* SelfConfiguringCell.swift in Sources */,
+				A82B8F97298ACA6E002E6FA6 /* MediumTableCell.swift in Sources */,
 				5173343223428CF8003FF47B /* SearchViewController.swift in Sources */,
 				5173341A23428A25003FF47B /* SceneDelegate.swift in Sources */,
 			);
