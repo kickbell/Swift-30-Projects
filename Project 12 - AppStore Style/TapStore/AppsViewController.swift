@@ -20,6 +20,7 @@ class AppsViewController: UIViewController {
         collectionView.backgroundColor = .systemBackground
         view.addSubview(collectionView)
         
+        collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuseIdentifier)
         collectionView.register(FeaturedCell.self, forCellWithReuseIdentifier: FeaturedCell.reuseIdentifier)
         collectionView.register(MediumTableCell.self, forCellWithReuseIdentifier: MediumTableCell.reuseIdentifier)
         
@@ -45,6 +46,22 @@ class AppsViewController: UIViewController {
             default:
                 return self.configure(FeaturedCell.self, with: app, for: indexPath)
             }
+        }
+        
+        
+        //섹션헤더.
+        dataSource?.supplementaryViewProvider = { [weak self] collectionView, kind, indexPath in
+            guard let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionHeader.reuseIdentifier, for: indexPath) as? SectionHeader else {
+                return nil
+            }
+            //인덱스경로를 읽는 대신 직접 섹션을 가져오는 방법?..이라는데.
+            guard let firstApp = self?.dataSource?.itemIdentifier(for: indexPath) else { return nil }
+            guard let section = self?.dataSource?.snapshot().sectionIdentifier(containingItem: firstApp) else { return nil }
+            if section.title.isEmpty { return nil }
+            
+            sectionHeader.title.text = section.title
+            sectionHeader.subtitle.text = section.subtitle
+            return sectionHeader
         }
     }
 
@@ -122,6 +139,15 @@ class AppsViewController: UIViewController {
         
         let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
         layoutSection.orthogonalScrollingBehavior = .groupPagingCentered
+        
+        
+        //만들고 등록한 섹션헤더 집어넣기
+        let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.93), heightDimension: .estimated(80))
+        let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
+        
+        
+        
         return layoutSection
     }
 

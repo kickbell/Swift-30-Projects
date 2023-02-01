@@ -10,6 +10,7 @@ import UIKit
 
 //섹션의 헤더. 스크롤링해도 안움직임. UICollectionReusableView
 class SectionHeader: UICollectionReusableView {
+    static var reuseIdentifier: String = "SectionHeader"
     
     let title = UILabel()
     let subtitle = UILabel()

@@ -24,6 +24,7 @@
 		A82B8F95298AA959002E6FA6 /* FeaturedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82B8F94298AA959002E6FA6 /* FeaturedCell.swift */; };
 		A82B8F97298ACA6E002E6FA6 /* MediumTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82B8F96298ACA6E002E6FA6 /* MediumTableCell.swift */; };
 		A82B8F99298AD10A002E6FA6 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82B8F98298AD10A002E6FA6 /* SectionHeader.swift */; };
+		A82B8F9B298AD9E1002E6FA6 /* SmallTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82B8F9A298AD9E1002E6FA6 /* SmallTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		A82B8F94298AA959002E6FA6 /* FeaturedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCell.swift; sourceTree = "<group>"; };
 		A82B8F96298ACA6E002E6FA6 /* MediumTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumTableCell.swift; sourceTree = "<group>"; };
 		A82B8F98298AD10A002E6FA6 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		A82B8F9A298AD9E1002E6FA6 /* SmallTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				A82B8F92298AA8C5002E6FA6 /* SelfConfiguringCell.swift */,
 				A82B8F94298AA959002E6FA6 /* FeaturedCell.swift */,
 				A82B8F96298ACA6E002E6FA6 /* MediumTableCell.swift */,
+				A82B8F9A298AD9E1002E6FA6 /* SmallTableCell.swift */,
 				A82B8F98298AD10A002E6FA6 /* SectionHeader.swift */,
 				5173342C23428CF8003FF47B /* ArcadeViewController.swift */,
 				5173342E23428CF8003FF47B /* GamesViewController.swift */,
@@ -178,6 +181,7 @@
 				5173343423428CF8003FF47B /* AppsViewController.swift in Sources */,
 				5173343323428CF8003FF47B /* ArcadeViewController.swift in Sources */,
 				5173343623428CF8003FF47B /* App.swift in Sources */,
+				A82B8F9B298AD9E1002E6FA6 /* SmallTableCell.swift in Sources */,
 				5173343823428CF8003FF47B /* Bundle-Decodable.swift in Sources */,
 				A82B8F95298AA959002E6FA6 /* FeaturedCell.swift in Sources */,
 				A82B8F93298AA8C5002E6FA6 /* SelfConfiguringCell.swift in Sources */,
