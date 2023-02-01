@@ -20,9 +20,12 @@ enum Icon: String, CaseIterable {
 
 class ViewController: UIViewController {
     
+    
     @IBAction func tap(_ sender: UIButton) {
         guard let icon = Icon.allCases.randomElement() else { return }
         changeIcon(to: icon)
+        
+        NotificationCenter.default.
     }
     
     func changeIcon(to icon: Icon) {
