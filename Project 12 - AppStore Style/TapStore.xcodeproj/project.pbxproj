@@ -80,27 +80,91 @@
 		5173341623428A25003FF47B /* TapStore */ = {
 			isa = PBXGroup;
 			children = (
+				A82B8F9C298B9F8B002E6FA6 /* AppDelegate */,
+				A82B8FA2298B9FD5002E6FA6 /* Supporting Files */,
+				A82B8F9E298B9FA2002E6FA6 /* ViewControllers */,
+				A82B8F9D298B9F99002E6FA6 /* Views */,
+				A82B8FA1298B9FBD002E6FA6 /* Models */,
+				A82B8FA3298BA03C002E6FA6 /* JSON */,
+				A82B8F9F298B9FAB002E6FA6 /* Protocols */,
+				A82B8FA0298B9FB7002E6FA6 /* Utils */,
+			);
+			path = TapStore;
+			sourceTree = "<group>";
+		};
+		A82B8F9C298B9F8B002E6FA6 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
 				5173341723428A25003FF47B /* AppDelegate.swift */,
 				5173341923428A25003FF47B /* SceneDelegate.swift */,
-				5173342D23428CF8003FF47B /* AppsViewController.swift */,
-				A82B8F92298AA8C5002E6FA6 /* SelfConfiguringCell.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		A82B8F9D298B9F99002E6FA6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				A82B8F94298AA959002E6FA6 /* FeaturedCell.swift */,
 				A82B8F96298ACA6E002E6FA6 /* MediumTableCell.swift */,
 				A82B8F9A298AD9E1002E6FA6 /* SmallTableCell.swift */,
 				A82B8F98298AD10A002E6FA6 /* SectionHeader.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A82B8F9E298B9FA2002E6FA6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5173342D23428CF8003FF47B /* AppsViewController.swift */,
 				5173342C23428CF8003FF47B /* ArcadeViewController.swift */,
 				5173342E23428CF8003FF47B /* GamesViewController.swift */,
 				5173342B23428CF8003FF47B /* SearchViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A82B8F9F298B9FAB002E6FA6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A82B8F92298AA8C5002E6FA6 /* SelfConfiguringCell.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A82B8FA0298B9FB7002E6FA6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5173343123428CF8003FF47B /* Bundle-Decodable.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A82B8FA1298B9FBD002E6FA6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
 				5173343023428CF8003FF47B /* Section.swift */,
 				5173342F23428CF8003FF47B /* App.swift */,
-				5173343123428CF8003FF47B /* Bundle-Decodable.swift */,
-				5173343923428D09003FF47B /* appstore.json */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A82B8FA2298B9FD5002E6FA6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				5173341D23428A25003FF47B /* Main.storyboard */,
 				5173342023428A27003FF47B /* Assets.xcassets */,
 				5173342223428A27003FF47B /* LaunchScreen.storyboard */,
 				5173342523428A27003FF47B /* Info.plist */,
 			);
-			path = TapStore;
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A82B8FA3298BA03C002E6FA6 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				5173343923428D09003FF47B /* appstore.json */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,7 +328,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -318,7 +382,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -334,7 +398,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B5C26XE59E;
-				INFOPLIST_FILE = TapStore/Info.plist;
+				INFOPLIST_FILE = "TapStore/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -352,7 +416,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B5C26XE59E;
-				INFOPLIST_FILE = TapStore/Info.plist;
+				INFOPLIST_FILE = "TapStore/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

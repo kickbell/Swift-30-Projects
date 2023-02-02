@@ -15,3 +15,19 @@ struct Section: Decodable, Hashable {
     let subtitle: String
     let items: [App]
 }
+
+extension Section {
+    enum AppType: String {
+        case mediumTable
+        case smallTable
+        case featured
+        case none
+    }
+    
+    var appType: AppType {
+        return AppType(rawValue: self.type) ?? .none
+    }
+}
+
+
+
