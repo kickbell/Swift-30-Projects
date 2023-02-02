@@ -72,3 +72,11 @@ class FeaturedCell: UICollectionViewCell, SelfConfiguringCell {
         imageView.image = UIImage(named: app.image)
     }
 }
+
+
+
+
+
+
+
+

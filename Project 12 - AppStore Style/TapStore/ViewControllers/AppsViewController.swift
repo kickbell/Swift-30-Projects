@@ -45,31 +45,19 @@ class AppsViewController: UIViewController {
     }
     
     func createFeaturedCellRegistration() -> UICollectionView.CellRegistration<FeaturedCell, App> {
-        return UICollectionView.CellRegistration<FeaturedCell, App> { (cell, indexPath, app) in
-            cell.tagline.text = app.tagline.uppercased()
-            cell.name.text = app.name
-            cell.subtitle.text = app.subheading
-            cell.imageView.image = UIImage(named: app.image)
-        }
+        return UICollectionView.CellRegistration<FeaturedCell, App> { (cell, indexPath, app) in cell.configure(with: app) }
     }
     
     func createMediumTableCellRegistration() -> UICollectionView.CellRegistration<MediumTableCell, App>{
-        return UICollectionView.CellRegistration<MediumTableCell, App> { (cell, indexPath, app) in
-            cell.name.text = app.name
-            cell.subtitle.text = app.subheading
-            cell.imageView.image = UIImage(named: app.image)
-        }
+        return UICollectionView.CellRegistration<MediumTableCell, App> { (cell, indexPath, app) in cell.configure(with: app) }
     }
     
     func createSmallTableCellRegistration() -> UICollectionView.CellRegistration<SmallTableCell, App>{
-        return UICollectionView.CellRegistration<SmallTableCell, App> { (cell, indexPath, app) in
-            cell.name.text = app.name
-            cell.imageView.image = UIImage(named: app.image)
-        }
+        return UICollectionView.CellRegistration<SmallTableCell, App> { (cell, indexPath, app) in cell.configure(with: app) }
     }
     
     func createSectionHeaderRegistration() -> UICollectionView.SupplementaryRegistration<SectionHeader>{
-        return UICollectionView.SupplementaryRegistration<SectionHeader>(elementKind: UICollectionView.elementKindSectionHeader) { (_,_,_) in }
+        return UICollectionView.SupplementaryRegistration<SectionHeader>(elementKind: UICollectionView.elementKindSectionHeader) { supplementaryView,elementKind,indexPath in }
     }
     
     func createDataSource() {
@@ -242,4 +230,3 @@ class AppsViewController: UIViewController {
     }
     
 }
-
