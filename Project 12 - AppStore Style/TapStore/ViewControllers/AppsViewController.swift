@@ -21,69 +21,27 @@ class AppsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
-//        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        collectionView.backgroundColor = .systemBackground
         view.addSubview(collectionView)
-        
-//        collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuseIdentifier)
-        //        collectionView.register(FeaturedCell.self, forCellWithReuseIdentifier: FeaturedCell.reuseIdentifier)
-//        collectionView.register(MediumTableCell.self, forCellWithReuseIdentifier: MediumTableCell.reuseIdentifier)
-//        collectionView.register(SmallTableCell.self, forCellWithReuseIdentifier: SmallTableCell.reuseIdentifier)
         
         createDataSource()
         applyInitialSnapshot()
     }
+
     
-    //SelfConfiguringCell를 준수하는 T타입은 다 리턴가능..
-    func configure<T: SelfConfiguringCell>(_ cellType: T.Type, with app: App, for indexPath: IndexPath) -> T {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellType.reuseIdentifier, for: indexPath) as? T else {
-            fatalError("Unable to dequeue \(cellType)")
+    func cellRegistration<T: SelfConfiguringCell> (_ cell: T.Type) -> UICollectionView.CellRegistration<T, App>{
+        return UICollectionView.CellRegistration<T, App> { (cell, indexPath, app) in cell.configure(with: app)
         }
-        cell.configure(with: app)
-        return cell
     }
     
-    func createFeaturedCellRegistration() -> UICollectionView.CellRegistration<FeaturedCell, App> {
-        return UICollectionView.CellRegistration<FeaturedCell, App> { (cell, indexPath, app) in cell.configure(with: app) }
-    }
-    
-    func createMediumTableCellRegistration() -> UICollectionView.CellRegistration<MediumTableCell, App>{
-        return UICollectionView.CellRegistration<MediumTableCell, App> { (cell, indexPath, app) in cell.configure(with: app) }
-    }
-    
-    func createSmallTableCellRegistration() -> UICollectionView.CellRegistration<SmallTableCell, App>{
-        return UICollectionView.CellRegistration<SmallTableCell, App> { (cell, indexPath, app) in cell.configure(with: app) }
-    }
-    
-    func createSectionHeaderRegistration() -> UICollectionView.SupplementaryRegistration<SectionHeader>{
-        return UICollectionView.SupplementaryRegistration<SectionHeader>(elementKind: UICollectionView.elementKindSectionHeader) { supplementaryView,elementKind,indexPath in }
+    func sectionHeaderRegistration<T: UICollectionReusableView>(_ view: T.Type) -> UICollectionView.SupplementaryRegistration<T>{
+        return UICollectionView.SupplementaryRegistration<T>(elementKind: UICollectionView.elementKindSectionHeader) { supplementaryView,elementKind,indexPath in }
     }
     
     func createDataSource() {
-        
-        let featuredCellRegistration = createFeaturedCellRegistration()
-        let smallTableCellRegistration = createSmallTableCellRegistration()
-        let mediumTableCellRegistration = createMediumTableCellRegistration()
-        let sectionHeaderRegistration = createSectionHeaderRegistration()
-        
-//        //        ios 14부터는 이걸로도 할 수 있다.
-//        //        아래처럼 해주면 되고, UIListContentConfiguration 도 14부터 나왔으니 참고해야 함.
-//        let cellRegistration = UICollectionView.CellRegistration<FeaturedCell, App> { (cell, indexPath, app) in
-//            // configure cell content
-//            //               var contentConfiguration = UIListContentConfiguration.valueCell()
-//            //                           contentConfiguration.text = emoji.text
-//            //               contentConfiguration.secondaryText = String(describing: emoji.category)
-//            //               cell.contentConfiguration = contentConfiguration
-//            //
-//            //               cell.accessories = [.disclosureIndicator()]
-//
-//            cell.tagline.text = app.tagline.uppercased()
-//            cell.name.text = app.name
-//            cell.subtitle.text = app.subheading
-//            cell.imageView.image = UIImage(named: app.image)
-//        }
-//
+        let featuredCellRegistration = cellRegistration(FeaturedCell.self)
+        let smallTableCellRegistration = cellRegistration(SmallTableCell.self)
+        let mediumTableCellRegistration = cellRegistration(MediumTableCell.self)
+        let sectionHeaderRegistration = sectionHeaderRegistration(SectionHeader.self)
         
         dataSource = UICollectionViewDiffableDataSource<Section, App>(collectionView: collectionView) { collectionView, indexPath, app in
             let section = self.sections[indexPath.section]
@@ -104,11 +62,7 @@ class AppsViewController: UIViewController {
         
         //섹션헤더.
         dataSource?.supplementaryViewProvider = { [weak self] collectionView, kind, indexPath in
-//            guard let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionHeader.reuseIdentifier, for: indexPath) as? SectionHeader else {
-//                return nil
-//            }
             let sectionHeader = collectionView.dequeueConfiguredReusableSupplementary(using: sectionHeaderRegistration, for: indexPath)
-            
             
             //인덱스경로를 읽는 대신 직접 섹션을 가져오는 방법?..이라는데.
             guard let firstApp = self?.dataSource?.itemIdentifier(for: indexPath) else { return nil }
