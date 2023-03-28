@@ -20,6 +20,14 @@ class SampleAppTests: XCTestCase {
     XCTAssertEqual(urlRequest.url?.path, UserEndpoint.user.path)
   }
   
+  func test_유저_데이터파싱하기() throws {
+    let usersData = [User].loadDataFromFile("Users.json", SampleAppTests.self)
+    let users = try request.parseResponse(data: usersData)
+    let firstUserName = users.first?.username ?? ""
+    
+    XCTAssertEqual(firstUserName, "Bret")
+  }
+  
   func test_웹사이트주소_잘열리는지() {
     let mockUIApplication = MockUIApplication(canOpen: true)
     let urlOpener = URLOpener(application: mockUIApplication)
@@ -89,7 +97,7 @@ class SampleAppTests: XCTestCase {
     ]
     
     let _ = try await service.users().get()
-
+    
   }
   
 }

@@ -19,6 +19,7 @@
 		A83E3C3429D3158500390209 /* SampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E3C3329D3158500390209 /* SampleAppTests.swift */; };
 		A83E3C3B29D31ABD00390209 /* MockUIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E3C3A29D31ABD00390209 /* MockUIApplication.swift */; };
 		A83E3C3D29D31C4900390209 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E3C3C29D31C4900390209 /* MockURLProtocol.swift */; };
+		A83E3C4129D32DF000390209 /* Users.json in Resources */ = {isa = PBXBuildFile; fileRef = A83E3C4029D32DF000390209 /* Users.json */; };
 		A84C4A4D29D2B53A00817204 /* URLOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C4A4C29D2B53A00817204 /* URLOpener.swift */; };
 		A890328629D13D3800B67093 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890328529D13D3800B67093 /* AppDelegate.swift */; };
 		A890328829D13D3800B67093 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890328729D13D3800B67093 /* SceneDelegate.swift */; };
@@ -27,7 +28,6 @@
 		A890329A29D13DA800B67093 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890329929D13DA800B67093 /* DetailViewController.swift */; };
 		A89032A029D1454000B67093 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890329F29D1454000B67093 /* Coordinator.swift */; };
 		A89032A229D1454C00B67093 /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89032A129D1454C00B67093 /* ListCoordinator.swift */; };
-		A89032CA29D1613A00B67093 /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = A89032C929D1613A00B67093 /* user.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +53,7 @@
 		A83E3C3329D3158500390209 /* SampleAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAppTests.swift; sourceTree = "<group>"; };
 		A83E3C3A29D31ABD00390209 /* MockUIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUIApplication.swift; sourceTree = "<group>"; };
 		A83E3C3C29D31C4900390209 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		A83E3C4029D32DF000390209 /* Users.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Users.json; sourceTree = "<group>"; };
 		A84C4A4C29D2B53A00817204 /* URLOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLOpener.swift; sourceTree = "<group>"; };
 		A890328229D13D3800B67093 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A890328529D13D3800B67093 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +64,6 @@
 		A890329929D13DA800B67093 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A890329F29D1454000B67093 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A89032A129D1454C00B67093 /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
-		A89032C929D1613A00B67093 /* user.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,10 +138,10 @@
 		A83E3C3229D3158500390209 /* SampleAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				A89032C929D1613A00B67093 /* user.json */,
 				A83E3C3329D3158500390209 /* SampleAppTests.swift */,
 				A83E3C3A29D31ABD00390209 /* MockUIApplication.swift */,
 				A83E3C3C29D31C4900390209 /* MockURLProtocol.swift */,
+				A83E3C4029D32DF000390209 /* Users.json */,
 			);
 			path = SampleAppTests;
 			sourceTree = "<group>";
@@ -298,6 +298,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A83E3C4129D32DF000390209 /* Users.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +306,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A89032CA29D1613A00B67093 /* user.json in Resources */,
 				A890329229D13D3900B67093 /* LaunchScreen.storyboard in Resources */,
 				A890328F29D13D3900B67093 /* Assets.xcassets in Resources */,
 			);
