@@ -121,6 +121,7 @@ extension UserViewController {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: UserCell.reuseIdentifier) as? UserCell else {
       return UserCell()
     }
+    
     cell.configure(with: users[indexPath.row])
     return cell
   }

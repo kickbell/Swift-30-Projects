@@ -8,38 +8,29 @@
 import Foundation
 import UIKit
 
-public final class UserCell: UITableViewCell {
+final class RecentSearchCell: UITableViewCell {
   
-  private let name: UILabel = {
+  private let titleLabel: UILabel = {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
-    label.font = UIFont.preferredFont(forTextStyle: .subheadline)
+    label.font = UIFont.preferredFont(forTextStyle: .body)
     label.textColor = .label
     return label
   }()
   
-  private let username: UILabel = {
-    let label = UILabel()
-    label.translatesAutoresizingMaskIntoConstraints = false
-    label.font = UIFont.preferredFont(forTextStyle: .body)
-    label.textColor = .secondaryLabel
-    label.numberOfLines = 2
-    return label
-  }()
-  
-  private let email: UILabel = {
-    let label = UILabel()
-    label.translatesAutoresizingMaskIntoConstraints = false
-    label.font = UIFont.preferredFont(forTextStyle: .body)
-    label.textColor = .secondaryLabel
-    return label
+  private let removeButton: UIButton = {
+    let button = UIButton()
+    button.translatesAutoresizingMaskIntoConstraints = false
+    button.setImage(UIImage(systemName: "xmark"), for: .normal)
+    button.tintColor = .label
+    return button
   }()
   
   private let stackView: UIStackView = {
     let stackView = UIStackView()
     stackView.translatesAutoresizingMaskIntoConstraints = false
-    stackView.axis = .vertical
-    stackView.distribution = .fill
+    stackView.axis = .horizontal
+    stackView.distribution = .equalSpacing
     stackView.alignment = .fill
     return stackView
   }()
@@ -57,10 +48,9 @@ public final class UserCell: UITableViewCell {
   }
   
   private func setupView() {
-    accessoryType = .disclosureIndicator
-    stackView.addArrangedSubview(name)
-    stackView.addArrangedSubview(username)
-    stackView.addArrangedSubview(email)
+    contentView.backgroundColor = .secondarySystemBackground
+    stackView.addArrangedSubview(titleLabel)
+    stackView.addArrangedSubview(removeButton)
     addSubview(stackView)
     
     NSLayoutConstraint.activate([
@@ -71,10 +61,8 @@ public final class UserCell: UITableViewCell {
     ])
   }
   
-  func configure(with target: User) {
-    name.text = "NAME : \(target.name)"
-    username.text = "\(target.username)"
-    email.text = "\(target.email)"
+  func configure(with target: String) {
+    titleLabel.text = target
   }
   
 }
