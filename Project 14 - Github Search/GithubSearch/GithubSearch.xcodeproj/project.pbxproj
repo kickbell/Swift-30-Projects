@@ -106,13 +106,50 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		A82B8F7729D5B0FA006E2891 /* AppDelegate */ = {
+		A82B8F7729D5B0FA006E2891 /* AppDelegates */ = {
 			isa = PBXGroup;
 			children = (
 				A84DBB9229D56D0D000CA8CF /* AppDelegate.swift */,
 				A84DBB9429D56D0D000CA8CF /* SceneDelegate.swift */,
 			);
-			path = AppDelegate;
+			path = AppDelegates;
+			sourceTree = "<group>";
+		};
+		A82B8F8829D69C86006E2891 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				A84DBB9629D56D0D000CA8CF /* SearchViewController.swift */,
+				A82B8F8429D67EDE006E2891 /* RecentSearchHeaderView.swift */,
+				A82B8F6529D58DFC006E2891 /* RecentSearchCell.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		A82B8F8929D69C8D006E2891 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				A82B8F6329D584E8006E2891 /* DetailViewController.swift */,
+				A82B8F6129D584D2006E2891 /* RepositoryCell.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		A82B8F8A29D69C93006E2891 /* SearchOption */ = {
+			isa = PBXGroup;
+			children = (
+				A82B8F8029D5C275006E2891 /* SearchOptionsController.swift */,
+			);
+			path = SearchOption;
+			sourceTree = "<group>";
+		};
+		A82B8F8B29D69CA7006E2891 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				A82B8F8829D69C86006E2891 /* Search */,
+				A82B8F8929D69C8D006E2891 /* Detail */,
+				A82B8F8A29D69C93006E2891 /* SearchOption */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		A84DBB8629D56D0C000CA8CF = {
@@ -134,15 +171,10 @@
 		A84DBB9129D56D0D000CA8CF /* GithubSearch */ = {
 			isa = PBXGroup;
 			children = (
-				A82B8F7729D5B0FA006E2891 /* AppDelegate */,
-				A84DBB9629D56D0D000CA8CF /* SearchViewController.swift */,
-				A82B8F6329D584E8006E2891 /* DetailViewController.swift */,
-				A82B8F8029D5C275006E2891 /* SearchOptionsController.swift */,
-				A82B8F8429D67EDE006E2891 /* RecentSearchHeaderView.swift */,
-				A82B8F6529D58DFC006E2891 /* RecentSearchCell.swift */,
-				A82B8F6129D584D2006E2891 /* RepositoryCell.swift */,
-				A82B8F7629D5B0F3006E2891 /* Utils */,
+				A82B8F7729D5B0FA006E2891 /* AppDelegates */,
+				A82B8F8B29D69CA7006E2891 /* Screens */,
 				A82B8F7529D5B0E4006E2891 /* Entities */,
+				A82B8F7629D5B0F3006E2891 /* Utils */,
 				A82B8F6B29D5A810006E2891 /* github-colors.json */,
 				A82B8F6D29D5AACB006E2891 /* repos.json */,
 				A84DBB9B29D56D0F000CA8CF /* Assets.xcassets */,
