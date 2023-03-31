@@ -29,6 +29,8 @@
 		A82B8F8329D5CB78006E2891 /* SearchOptionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82B8F8229D5CB78006E2891 /* SearchOptionType.swift */; };
 		A82B8F8529D67EDE006E2891 /* RecentSearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82B8F8429D67EDE006E2891 /* RecentSearchHeaderView.swift */; };
 		A82B8F8729D681DC006E2891 /* UIFont+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82B8F8629D681DC006E2891 /* UIFont+Utils.swift */; };
+		A82B8F8E29D72088006E2891 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82B8F8D29D72088006E2891 /* Coordinator.swift */; };
+		A82B8F9029D7209A006E2891 /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82B8F8F29D7209A006E2891 /* SearchCoordinator.swift */; };
 		A84DBB9329D56D0D000CA8CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84DBB9229D56D0D000CA8CF /* AppDelegate.swift */; };
 		A84DBB9529D56D0D000CA8CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84DBB9429D56D0D000CA8CF /* SceneDelegate.swift */; };
 		A84DBB9729D56D0D000CA8CF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84DBB9629D56D0D000CA8CF /* SearchViewController.swift */; };
@@ -57,6 +59,8 @@
 		A82B8F8229D5CB78006E2891 /* SearchOptionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchOptionType.swift; sourceTree = "<group>"; };
 		A82B8F8429D67EDE006E2891 /* RecentSearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchHeaderView.swift; sourceTree = "<group>"; };
 		A82B8F8629D681DC006E2891 /* UIFont+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Utils.swift"; sourceTree = "<group>"; };
+		A82B8F8D29D72088006E2891 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		A82B8F8F29D7209A006E2891 /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
 		A84DBB8F29D56D0D000CA8CF /* GithubSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A84DBB9229D56D0D000CA8CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A84DBB9429D56D0D000CA8CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +156,15 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
+		A82B8F8C29D7207D006E2891 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A82B8F8D29D72088006E2891 /* Coordinator.swift */,
+				A82B8F8F29D7209A006E2891 /* SearchCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		A84DBB8629D56D0C000CA8CF = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +186,7 @@
 			children = (
 				A82B8F7729D5B0FA006E2891 /* AppDelegates */,
 				A82B8F8B29D69CA7006E2891 /* Screens */,
+				A82B8F8C29D7207D006E2891 /* Coordinator */,
 				A82B8F7529D5B0E4006E2891 /* Entities */,
 				A82B8F7629D5B0F3006E2891 /* Utils */,
 				A82B8F6B29D5A810006E2891 /* github-colors.json */,
@@ -270,7 +284,9 @@
 				A84DBB9729D56D0D000CA8CF /* SearchViewController.swift in Sources */,
 				A82B8F8329D5CB78006E2891 /* SearchOptionType.swift in Sources */,
 				A82B8F6629D58DFC006E2891 /* RecentSearchCell.swift in Sources */,
+				A82B8F8E29D72088006E2891 /* Coordinator.swift in Sources */,
 				A84DBB9329D56D0D000CA8CF /* AppDelegate.swift in Sources */,
+				A82B8F9029D7209A006E2891 /* SearchCoordinator.swift in Sources */,
 				A82B8F7B29D5B7E7006E2891 /* Language+Utils.swift in Sources */,
 				A82B8F7F29D5C1A7006E2891 /* Order.swift in Sources */,
 				A82B8F5E29D58125006E2891 /* UIViewController+Utils.swift in Sources */,

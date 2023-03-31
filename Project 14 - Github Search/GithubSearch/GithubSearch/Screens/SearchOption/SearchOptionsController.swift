@@ -10,17 +10,19 @@ import UIKit
 
 final class SearchOptionsController: UITableViewController {
   
-  private let options: [SearchOptionType]
+  private var options: [SearchOptionType] = []
   
   var searchOptionValueChange: (String) -> Void = { _ in }
-  
+
+  weak var coordinator: SearchCoordinator?
+
   init(options: [SearchOptionType]) {
     self.options = options
     super.init(nibName: nil, bundle: nil)
   }
   
   required init?(coder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
+    super.init(coder: coder)
   }
   
   override func viewDidLoad() {
@@ -31,12 +33,12 @@ final class SearchOptionsController: UITableViewController {
   
   private func setupViews() {
     view.backgroundColor = .systemBackground
-    navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(pop))
+    navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(leftBarButtonItemDidTap))
   }
   
   @objc
-  private func pop() {
-    dismiss(animated: true)
+  private func leftBarButtonItemDidTap() {
+    coordinator?.dismiss(on: self)
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -63,9 +65,11 @@ final class SearchOptionsController: UITableViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     
-    print(indexPath.row)
-    searchOptionValueChange("aaaa")
-    dismiss(animated: true)
+    guard let cell = tableView.cellForRow(at: indexPath),
+          let selectedOption = cell.textLabel?.text else { return }
+    
+    coordinator?.didSelectSearchOption(with: selectedOption, on: self)
+    
   }
   
 }

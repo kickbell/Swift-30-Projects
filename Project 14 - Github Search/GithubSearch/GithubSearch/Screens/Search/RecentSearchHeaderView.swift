@@ -45,11 +45,6 @@ final class RecentSearchHeaderView: UIView {
     
     setupViews()
   }
-//  override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-//    super.init(style: style, reuseIdentifier: reuseIdentifier)
-//
-//    setupViews()
-//  }
   
   required init?(coder: NSCoder) {
     super.init(coder: coder)

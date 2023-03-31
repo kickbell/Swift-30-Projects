@@ -20,6 +20,23 @@ class DetailViewController: UITableViewController {
   
   var repos: [Repository] = []
   
+  weak var coordinator: SearchCoordinator?
+  
+  private var query: String?
+  
+  var selectSearchOption: String = "default"
+  
+  init(
+    query: String? = nil
+  ) {
+    self.query = query
+    super.init(nibName: nil, bundle: nil)
+  }
+  
+  required init?(coder: NSCoder) {
+    super.init(coder: coder)
+  }
+  
   private func setupViews() {
     title = "Repositories"
     navigationItem.rightBarButtonItem = rightBarButtonItem
@@ -30,9 +47,12 @@ class DetailViewController: UITableViewController {
     tableView.register(cellType: RepositoryCell.self)
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    print(#function, selectSearchOption)
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     setupViews()
     fetchData()
   }
@@ -45,14 +65,12 @@ class DetailViewController: UITableViewController {
   
   @objc
   private func rightBarButtonItemDidTap() {
-    let alertController = UIAlertController(title: "", message: "Search options", preferredStyle: .actionSheet)
+    let alertController = UIAlertController(title: "Search options", message: nil, preferredStyle: .actionSheet)
     let sortAction = UIAlertAction(title: "Sort", style: .default) { _ in
-      let nav = UINavigationController(rootViewController: SearchOptionsController(options: Sort.allCases))
-      self.present(nav, animated: true)
+      self.coordinator?.selectSearchOption(with: Sort.allCases, on: self)
     }
     let orderAction = UIAlertAction(title: "Order", style: .default) { _ in
-      let nav = UINavigationController(rootViewController: SearchOptionsController(options: Order.allCases))
-      self.present(nav, animated: true)
+      self.coordinator?.selectSearchOption(with: Order.allCases, on: self)
     }
     let cancelAction = UIAlertAction(title: "cancel", style: .cancel)
     

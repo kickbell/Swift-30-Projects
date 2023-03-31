@@ -9,14 +9,14 @@ import UIKit
 import ReactorKit
 import RxSwift
 
-
-//액션시트 만들기
+//코디네이터패턴 추가하기
+//곰튀김님 유저디폴트 넣기 프로토콜지향프로그래밍
+//Swinject 추가하기
+//리액터킷으로 변경하기
 
 
 //레포지토리셀 이미지넣기, 이미지 캐싱
 //네트워크 연결하기
-//코디네이터패턴 추가하기
-//리액터킷으로 변경하기
 //테스트 넣기
 
 
@@ -33,6 +33,8 @@ class SearchViewController: UITableViewController {
   private let recentSearchHeaderView = RecentSearchHeaderView()
   
   var data: [String] = []
+  
+  weak var coordinator: SearchCoordinator?
   
   private func setupViews() {
     title = "Github"
@@ -73,7 +75,6 @@ class SearchViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-    print(tableView.tableHeaderView, "??")
     if data.isEmpty {
       tableView.tableHeaderView?.isHidden = true
     }
@@ -81,13 +82,11 @@ class SearchViewController: UITableViewController {
   
   override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     
-    print(#function, "???")
     return data.isEmpty == true ? nil : recentSearchHeaderView
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let detail = DetailViewController()
-    self.navigationController?.pushViewController(detail, animated: true)
+    coordinator?.searchRepositories(query: data[indexPath.row])
   }
   
   
@@ -96,13 +95,12 @@ class SearchViewController: UITableViewController {
 extension SearchViewController: UISearchBarDelegate {
   
   func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-    print(#function, searchBar.text)
     data = ["포도", "딸기", "메론", "수박", "바나나", "방울토마토", "참외"]
     tableView.reloadData()
   }
   
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-    print(#function, searchBar.text)
+    coordinator?.searchRepositories(query: searchBar.text ?? "")
   }
   
 }
@@ -110,7 +108,7 @@ extension SearchViewController: UISearchBarDelegate {
 extension SearchViewController: UISearchResultsUpdating {
   func updateSearchResults(for searchController: UISearchController) {
     //내부 유저디폴트에서 조회할때 데이터있으면 써치바 텍스트에 맞는걸로만 보이게
-    print(#function, searchController.searchBar.text)
+    //print(#function, searchController.searchBar.text)
   }
 }
 
