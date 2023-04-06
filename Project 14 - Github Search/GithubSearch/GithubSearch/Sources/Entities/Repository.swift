@@ -8,11 +8,11 @@
 import Foundation
 
 struct Repository {
-  let name: String
+  let name: String?
   let stargazersCount: Int
-  let language: String
-  let description: String
-  let htmlUrl: String
+  let language: String?
+  let description: String?
+  let htmlUrl: String?
   let owner: Owner
 }
 
