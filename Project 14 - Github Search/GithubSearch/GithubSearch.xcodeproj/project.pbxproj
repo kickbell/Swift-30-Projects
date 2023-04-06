@@ -18,7 +18,6 @@
 		A826FBDF29D872E90092775C /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A826FBDE29D872E90092775C /* Network.swift */; };
 		A826FBE229D873330092775C /* NetworkImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A826FBE129D873330092775C /* NetworkImp.swift */; };
 		A826FC4C29D933090092775C /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = A826FC4B29D933090092775C /* ReactorKit */; };
-		A826FC4F29D9331B0092775C /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A826FC4E29D9331B0092775C /* RxCocoa */; };
 		A82B8F5C29D58125006E2891 /* Decodable+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82B8F5929D58125006E2891 /* Decodable+Utils.swift */; };
 		A82B8F5D29D58125006E2891 /* UITableView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82B8F5A29D58125006E2891 /* UITableView+Utils.swift */; };
 		A82B8F5E29D58125006E2891 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82B8F5B29D58125006E2891 /* UIViewController+Utils.swift */; };
@@ -56,6 +55,7 @@
 		A8F66C2929DEFA3600A24F90 /* ImageURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F66C2529DEDF7900A24F90 /* ImageURLProtocol.swift */; };
 		A8F66C2B29DF031600A24F90 /* QueryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F66C2A29DF031600A24F90 /* QueryItem.swift */; };
 		A8F66C2D29DF097800A24F90 /* URLOpenerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F66C2C29DF097800A24F90 /* URLOpenerProtocol.swift */; };
+		A8F66C3329DF149C00A24F90 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A8F66C3229DF149C00A24F90 /* RxCocoa */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,7 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A826FC4F29D9331B0092775C /* RxCocoa in Frameworks */,
+				A8F66C3329DF149C00A24F90 /* RxCocoa in Frameworks */,
 				A826FC4C29D933090092775C /* ReactorKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,7 +375,7 @@
 			name = GithubSearch;
 			packageProductDependencies = (
 				A826FC4B29D933090092775C /* ReactorKit */,
-				A826FC4E29D9331B0092775C /* RxCocoa */,
+				A8F66C3229DF149C00A24F90 /* RxCocoa */,
 			);
 			productName = GithubSearch;
 			productReference = A84DBB8F29D56D0D000CA8CF /* GithubSearch.app */;
@@ -429,7 +429,7 @@
 			mainGroup = A84DBB8629D56D0C000CA8CF;
 			packageReferences = (
 				A826FC4A29D933090092775C /* XCRemoteSwiftPackageReference "ReactorKit" */,
-				A826FC4D29D9331B0092775C /* XCRemoteSwiftPackageReference "RxSwift" */,
+				A8F66C3129DF149C00A24F90 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = A84DBB9029D56D0D000CA8CF /* Products */;
 			projectDirPath = "";
@@ -789,12 +789,12 @@
 				minimumVersion = 3.0.0;
 			};
 		};
-		A826FC4D29D9331B0092775C /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+		A8F66C3129DF149C00A24F90 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -805,9 +805,9 @@
 			package = A826FC4A29D933090092775C /* XCRemoteSwiftPackageReference "ReactorKit" */;
 			productName = ReactorKit;
 		};
-		A826FC4E29D9331B0092775C /* RxCocoa */ = {
+		A8F66C3229DF149C00A24F90 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A826FC4D29D9331B0092775C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = A8F66C3129DF149C00A24F90 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
 		};
 /* End XCSwiftPackageProductDependency section */
