@@ -11,7 +11,7 @@ struct Language {
   static func color(_ named: String) -> UIColor? {
     guard let dict = self.colorsDict[named],
           let hexStr = dict["color"] else {
-      return nil
+      return UIColor.clear
     }
     return UIColor(hex: "\(hexStr)ff")
   }
