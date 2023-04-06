@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 final class RepositoryCell: UITableViewCell {
   
@@ -139,34 +140,33 @@ final class RepositoryCell: UITableViewCell {
     avatarImageView.image = nil
   }
   
+  var disposeBag = DisposeBag()
+  
   func configure(with target: Repository) {
     let stargazersCount = Formatter.numberFormatter.string(from: NSNumber(value: target.stargazersCount)) ?? ""
     
-    
     loadImage(urlString: target.owner.avatarUrl)
-    
     avatarLabel.text = target.owner.login
     nameLabel.text = target.name
     desriptionLabel.text = target.description
     stargazersCountButton.setTitle(" \(stargazersCount)", for: .normal)
-    languageButton.setTitle(" \(target.language)", for: .normal)
-    languageButton.tintColor = Language.color(target.language)
+    languageButton.setTitle(" \(target.language ?? "")", for: .normal)
+    languageButton.tintColor = Language.color(target.language ?? "")
   }
   
-  func loadImage(urlString: String) {
-    DispatchQueue.global().async {
-      if let url = URL(string: urlString) {
-        do{
-          let data = try Data(contentsOf: url)
-          let image = UIImage(data: data)
-          DispatchQueue.main.async {
-            self.avatarImageView.image = image
-          }
-        }catch {
-          print(error.localizedDescription)
-        }
-      }
+  private func loadImage(urlString: String) {
+    guard let url = URL(string: urlString) else {
+      print("invalid url: \(urlString)...")
+      return
     }
+    
+    ImageCache.publicCache.load(url: url as NSURL)
+      .withUnretained(self)
+      .observe(on: MainScheduler.instance)
+      .subscribe(onNext: { cell, image in
+        cell.avatarImageView.image = image
+      })
+      .disposed(by: disposeBag)
   }
   
 }

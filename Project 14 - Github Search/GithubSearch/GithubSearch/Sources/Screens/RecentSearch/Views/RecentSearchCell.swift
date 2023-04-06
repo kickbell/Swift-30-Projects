@@ -1,31 +1,27 @@
 //
-//  RecentSearchHeaderView.swift
+//  RecentSearchCell.swift
 //  GithubSearch
 //
-//  Created by jc.kim on 3/31/23.
+//  Created by jc.kim on 3/30/23.
 //
 
-import Foundation
 import UIKit
 
-final class RecentSearchHeaderView: UIView {
+final class RecentSearchCell: UITableViewCell {
   
-  private let titleLabel: UILabel = {
+  let titleLabel: UILabel = {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
-    label.text = "Recent searches"
+    label.font = UIFont.preferredFont(forTextStyle: .body)
     label.textColor = .label
-    label.font = UIFont.preferredFont(forTextStyle: .title3, weight: .bold)
     return label
   }()
   
-  private lazy var clearButton: UIButton = {
+  let removeButton: UIButton = {
     let button = UIButton()
     button.translatesAutoresizingMaskIntoConstraints = false
-    button.setTitleColor(.systemBlue, for: .normal)
-    button.setTitle("Clear", for: .normal)
-    button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
-    button.addTarget(self, action: #selector(clear), for: .touchUpInside)
+    button.setImage(UIImage(systemName: "xmark"), for: .normal)
+    button.tintColor = .label
     return button
   }()
   
@@ -38,10 +34,8 @@ final class RecentSearchHeaderView: UIView {
     return stackView
   }()
   
-  var clearButtonDidTap: (() -> Void) = {}
-
-  override init(frame: CGRect) {
-    super.init(frame: frame)
+  override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    super.init(style: style, reuseIdentifier: reuseIdentifier)
     
     setupViews()
   }
@@ -53,20 +47,23 @@ final class RecentSearchHeaderView: UIView {
   }
   
   private func setupViews() {
+    contentView.backgroundColor = .secondarySystemBackground
     stackView.addArrangedSubview(titleLabel)
-    stackView.addArrangedSubview(clearButton)
+    stackView.addArrangedSubview(removeButton)
     addSubview(stackView)
-
+    
     NSLayoutConstraint.activate([
-      stackView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+      stackView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
       stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
       stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-      stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
+      stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
     ])
   }
   
-  @objc
-  private func clear() {
-    clearButtonDidTap()
+  func configure(with target: String) {
+    self.titleLabel.text = target
   }
+  
 }
+
+

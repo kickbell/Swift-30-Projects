@@ -1,27 +1,30 @@
 //
-//  RecentSearchCell.swift
+//  RecentSearchHeaderView.swift
 //  GithubSearch
 //
-//  Created by jc.kim on 3/30/23.
+//  Created by jc.kim on 3/31/23.
 //
 
+import Foundation
 import UIKit
 
-final class RecentSearchCell: UITableViewCell {
+final class RecentSearchHeaderView: UITableViewHeaderFooterView {
   
   private let titleLabel: UILabel = {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
-    label.font = UIFont.preferredFont(forTextStyle: .body)
+    label.text = "Recent searches"
     label.textColor = .label
+    label.font = UIFont.preferredFont(forTextStyle: .title3, weight: .bold)
     return label
   }()
   
-  private let removeButton: UIButton = {
+  let clearButton: UIButton = {
     let button = UIButton()
     button.translatesAutoresizingMaskIntoConstraints = false
-    button.setImage(UIImage(systemName: "xmark"), for: .normal)
-    button.tintColor = .label
+    button.setTitleColor(.systemBlue, for: .normal)
+    button.setTitle("Clear", for: .normal)
+    button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
     return button
   }()
   
@@ -34,8 +37,8 @@ final class RecentSearchCell: UITableViewCell {
     return stackView
   }()
   
-  override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-    super.init(style: style, reuseIdentifier: reuseIdentifier)
+  override init(reuseIdentifier: String?) {
+    super.init(reuseIdentifier: reuseIdentifier)
     
     setupViews()
   }
@@ -47,23 +50,16 @@ final class RecentSearchCell: UITableViewCell {
   }
   
   private func setupViews() {
-    contentView.backgroundColor = .secondarySystemBackground
     stackView.addArrangedSubview(titleLabel)
-    stackView.addArrangedSubview(removeButton)
+    stackView.addArrangedSubview(clearButton)
     addSubview(stackView)
-    
+
     NSLayoutConstraint.activate([
-      stackView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+      stackView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
       stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
       stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-      stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
+      stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
     ])
   }
-  
-  func configure(with target: String) {
-    titleLabel.text = target
-  }
-  
+
 }
-
-

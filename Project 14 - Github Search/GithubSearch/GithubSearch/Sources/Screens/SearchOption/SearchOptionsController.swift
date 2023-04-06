@@ -10,13 +10,13 @@ import UIKit
 
 final class SearchOptionsController: UITableViewController {
   
-  private var options: [SearchOptionType] = []
+  private var options: [SearchOptionable] = []
   
-  var searchOptionValueChange: (String) -> Void = { _ in }
-
+  var queryItem: QueryItem?
+    
   weak var coordinator: SearchCoordinator?
-
-  init(options: [SearchOptionType]) {
+  
+  init(options: [SearchOptionable]) {
     self.options = options
     super.init(nibName: nil, bundle: nil)
   }
@@ -64,11 +64,19 @@ final class SearchOptionsController: UITableViewController {
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
+    let target = options[indexPath.row]
     
-    guard let cell = tableView.cellForRow(at: indexPath),
-          let selectedOption = cell.textLabel?.text else { return }
+    guard let queryItem = self.queryItem else { return }
     
-    coordinator?.didSelectSearchOption(with: selectedOption, on: self)
+    switch target {
+    case let sort as Sort:
+      let queryItem = QueryItem(query: queryItem.query, sort: sort, order: queryItem.order)
+      coordinator?.didSelectSearchOption(with: queryItem, on: self)
+    case let order as Order:
+      let queryItem = QueryItem(query: queryItem.query, sort: queryItem.sort, order: order)
+      coordinator?.didSelectSearchOption(with: queryItem, on: self)
+    default: break
+    }
     
   }
   
