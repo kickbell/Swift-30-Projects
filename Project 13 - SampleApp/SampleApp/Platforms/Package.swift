@@ -15,10 +15,10 @@ let package = Package(
       name: "NetworkImp",
       targets: ["NetworkImp"]
     ),
-    .library(
-      name: "CommonUI",
-      targets: ["CommonUI"]
-    ),
+//    .library(
+//      name: "CommonUI",
+//      targets: ["CommonUI"]
+//    ),
   ],
   dependencies: [
   ],
@@ -35,10 +35,10 @@ let package = Package(
         "Network"
       ]
     ),
-    .target(
-      name: "CommonUI",
-      dependencies: [
-      ]
-    ),
+//    .target(
+//      name: "CommonUI",
+//      dependencies: [
+//      ]
+//    ),
   ]
 )

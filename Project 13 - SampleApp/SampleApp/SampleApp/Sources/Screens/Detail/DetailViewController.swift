@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import MapKit
 import MessageUI
-import CommonUI
+//import CommonUI
 
 final class DetailViewController: UIViewController {
   

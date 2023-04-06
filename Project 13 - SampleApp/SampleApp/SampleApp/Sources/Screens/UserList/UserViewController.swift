@@ -7,7 +7,7 @@
 
 import UIKit
 import Combine
-import CommonUI
+//import CommonUI
 import NetworkImp
 
 final class UserViewController: UITableViewController {

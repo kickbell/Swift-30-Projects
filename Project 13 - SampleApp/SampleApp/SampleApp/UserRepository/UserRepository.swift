@@ -21,6 +21,7 @@ final class UserRepositoryImp: UserRepository {
     self.networkService = networkService
   }
   
+  
   func users() async -> Result<[User], NetworkError> {
       return await networkService.load(UserRequest(), UserEndpoint.user)
   }

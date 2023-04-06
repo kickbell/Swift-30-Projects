@@ -13,7 +13,6 @@
 		A83E3C1B29D30E3800390209 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E3C1729D30E3800390209 /* UserRequest.swift */; };
 		A83E3C1F29D30E5100390209 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E3C1D29D30E5000390209 /* UserViewController.swift */; };
 		A83E3C2029D30E5100390209 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E3C1E29D30E5100390209 /* UserCell.swift */; };
-		A83E3C2329D30F2100390209 /* CommonUI in Frameworks */ = {isa = PBXBuildFile; productRef = A83E3C2229D30F2100390209 /* CommonUI */; };
 		A83E3C2529D30F2100390209 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = A83E3C2429D30F2100390209 /* Network */; };
 		A83E3C2729D30F2100390209 /* NetworkImp in Frameworks */ = {isa = PBXBuildFile; productRef = A83E3C2629D30F2100390209 /* NetworkImp */; };
 		A83E3C3429D3158500390209 /* SampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E3C3329D3158500390209 /* SampleAppTests.swift */; };
@@ -78,7 +77,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A83E3C2329D30F2100390209 /* CommonUI in Frameworks */,
 				A83E3C2729D30F2100390209 /* NetworkImp in Frameworks */,
 				A83E3C2529D30F2100390209 /* Network in Frameworks */,
 			);
@@ -247,7 +245,6 @@
 			);
 			name = SampleApp;
 			packageProductDependencies = (
-				A83E3C2229D30F2100390209 /* CommonUI */,
 				A83E3C2429D30F2100390209 /* Network */,
 				A83E3C2629D30F2100390209 /* NetworkImp */,
 			);
@@ -606,10 +603,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A83E3C2229D30F2100390209 /* CommonUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = CommonUI;
-		};
 		A83E3C2429D30F2100390209 /* Network */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Network;

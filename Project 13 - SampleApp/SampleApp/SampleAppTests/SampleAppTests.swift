@@ -8,7 +8,7 @@
 import XCTest
 import Network
 import NetworkImp
-import CommonUI
+//import CommonUI
 @testable import SampleApp
 
 class SampleAppTests: XCTestCase {
